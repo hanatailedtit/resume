@@ -1,0 +1,220 @@
+<svg width="1440" height="2320" viewBox="0 0 1440 2320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>03 - 포트폴리오 (서지영 · Software Engineer)</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+    text { font-feature-settings: 'ss20' 1, 'calt' 1, 'kern' 1; -webkit-font-smoothing: antialiased; }
+  </style>
+  <defs>
+    <clipPath id="slot_1"><rect x="148" y="534" width="404" height="252" rx="12"/></clipPath>
+    <clipPath id="slot_2"><rect x="148" y="862" width="404" height="252" rx="12"/></clipPath>
+  </defs>
+  <rect width="1440" height="2320" fill="#FFFFFF"/>
+  <g id="Header">
+    <rect x="0" y="0" width="1440" height="64" fill="#FFFFFF"/>
+    <line x1="0" y1="64" x2="1440" y2="64" stroke="#70737C" stroke-opacity="0.14" stroke-width="1"/>
+    <text x="120" y="39" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="19" font-weight="700" letter-spacing="-0.0200em">서지영</text>
+    <line x1="182" y1="24" x2="182" y2="40" stroke="#70737C" stroke-opacity="0.22" stroke-width="1"/>
+    <text x="196" y="38" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="500" letter-spacing="0.0100em">Software Engineer</text>
+    <text x="884" y="38" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="500" letter-spacing="-0.0050em">소개</text>
+    <text x="956" y="38" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="500" letter-spacing="-0.0050em">이력</text>
+    <text x="1028" y="38" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="700" letter-spacing="-0.0100em">포트폴리오</text>
+    <rect x="1028" y="62" width="64" height="2" fill="#171719"/>
+    <rect x="1210" y="13" width="110" height="38" rx="10" fill="#FFFFFF" stroke="#70737C" stroke-opacity="0.22"/>
+    <text x="1228" y="37.25" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="600" letter-spacing="0.0060em">연락하기</text>
+    <path d="M1290.7 35.9L1298.8 27.8M1293.1 27.8H1298.8V33.5" stroke="#2C2D32" stroke-opacity="0.8" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g id="Portfolio-Header">
+    <circle cx="123" cy="139.5" r="3" fill="#0F766E"/>
+    <text x="132" y="144" fill="#0F766E" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="600" letter-spacing="0.0150em">포트폴리오 · Selected work</text>
+    <text x="120" y="204" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="42" font-weight="700" letter-spacing="-0.0280em">만든 것과 해결한 문제들.</text>
+    <text x="120" y="252" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="500" letter-spacing="0.0000em">서비스와 운영 도구를 개발하며 맡았던 역할과,</text>
+    <text x="120" y="280" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="17" font-weight="500" letter-spacing="0.0000em">문제를 해결하고 검증한 과정을 기록했습니다.</text>
+    <rect x="1180" y="170" width="140" height="44" rx="10" fill="#FFFFFF" stroke="#70737C" stroke-opacity="0.22"/>
+    <text x="1198" y="197.25" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="600" letter-spacing="0.0060em">이력 살펴보기</text>
+    <path d="M1289.3 192.0H1299.5M1295.3 187.8L1299.5 192.0L1295.3 196.2" stroke="#171719" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <line x1="120" y1="374" x2="1320" y2="374" stroke="#70737C" stroke-opacity="0.14" stroke-width="1"/>
+    <text x="120" y="356" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="700" letter-spacing="0.0060em">회사 프로젝트</text>
+    <rect x="214" y="341" width="24" height="20" rx="10" fill="#EAF5F3"/>
+    <text x="226" y="355" fill="#115E59" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="700" letter-spacing="0.0200em" text-anchor="middle">5</text>
+    <rect x="120" y="372" width="120" height="2" fill="#171719"/>
+    <text x="274" y="356" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="500" letter-spacing="0.0060em">사이드 프로젝트</text>
+    <rect x="382" y="341" width="24" height="20" rx="10" fill="#70737C" fill-opacity="0.08"/>
+    <text x="394" y="355" fill="#2C2D32" fill-opacity="0.78" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0200em" text-anchor="middle">2</text>
+  </g>
+  <g id="Company-Projects-Section">
+    <circle cx="123" cy="429.5" r="3" fill="#0F766E"/>
+    <text x="132" y="434" fill="#0F766E" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="600" letter-spacing="0.0150em">재직 중 담당한 작업</text>
+    <text x="120" y="476" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="30" font-weight="700" letter-spacing="-0.0240em">회사 프로젝트</text>
+  <g id="Company-Featured-1">
+    <rect x="120" y="508" width="1200" height="304" rx="16" fill="#FFFFFF" stroke="#70737C" stroke-opacity="0.14"/>
+  <g id="Capture-Slot-운영 화면 이미지 ">
+    <rect x="148" y="534" width="404" height="252" rx="12" fill="#F7F7F8"/>
+    <g clip-path="url(#slot_1)">
+    <rect x="148" y="534" width="404" height="32" fill="#FFFFFF"/>
+    <line x1="148" y1="566" x2="552" y2="566" stroke="#70737C" stroke-opacity="0.12" stroke-width="1"/>
+    <circle cx="164" cy="550" r="3.2" fill="#D4D6DA"/>
+    <circle cx="175" cy="550" r="3.2" fill="#D4D6DA"/>
+    <circle cx="186" cy="550" r="3.2" fill="#D4D6DA"/>
+    <text x="538" y="554" fill="#2C2D32" fill-opacity="0.58" font-family="'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" font-weight="500" letter-spacing="0.0200em" text-anchor="end">16:10 · Screen slot</text>
+    </g>
+    <rect x="148" y="534" width="404" height="252" rx="12" fill="none" stroke="#70737C" stroke-opacity="0.14"/>
+    <rect x="164" y="580" width="372" height="190" rx="8" fill="none" stroke="#70737C" stroke-opacity="0.18" stroke-dasharray="4 4"/>
+    <circle cx="350.0" cy="653.0" r="22" fill="#FFFFFF" stroke="#70737C" stroke-opacity="0.14"/>
+    <rect x="341.0" y="645.5" width="18" height="15" rx="2.5" stroke="#2C2D32" stroke-opacity="0.62" stroke-width="1.5" fill="none"/>
+    <line x1="341.0" y1="650.0" x2="359.0" y2="650.0" stroke="#2C2D32" stroke-opacity="0.62" stroke-width="1.4"/>
+    <path d="M344.5 657.5L348.5 654.0L351.5 656.5L354.0 654.5L356.5 657.5" stroke="#2C2D32" stroke-opacity="0.62" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="350.0" y="691.0" fill="#222429" fill-opacity="0.86" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="600" letter-spacing="0.0140em" text-anchor="middle">운영 화면 이미지 위치</text>
+    <text x="350.0" y="712.0" fill="#2C2D32" fill-opacity="0.66" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="500" letter-spacing="0.0200em" text-anchor="middle">설비 상태 · 이력 · 스트리밍 UI 캡처 슬롯</text>
+  </g>
+    <rect x="588" y="540" width="192" height="24" rx="12" fill="#EAF5F3"/>
+    <text x="598" y="556.2" fill="#115E59" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">세미티에스 · 2025.07 – 2026.05</text>
+    <text x="588" y="602" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="26" font-weight="700" letter-spacing="-0.0200em">SINGAL 장비 운영 플랫폼</text>
+    <text x="588" y="644" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="500" letter-spacing="0.0060em">C++ 서비스 백엔드와 Vue 운영 GUI를 함께 개발했습니다.</text>
+    <text x="588" y="672" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="500" letter-spacing="0.0060em">1:N 브로드캐스트로 카메라 다중 접속을 처리했습니다.</text>
+    <rect x="588" y="706" width="44" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="598" y="723.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">C++</text>
+    <rect x="640" y="706" width="53" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="650" y="723.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">Vue 3</text>
+    <rect x="701" y="706" width="86" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="711" y="723.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">WebSocket</text>
+    <rect x="795" y="706" width="66" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="805" y="723.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">FFmpeg</text>
+    <text x="588" y="770" fill="#0F766E" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="600" letter-spacing="0.0080em">문제 해결 과정 보기</text>
+    <path d="M711.0 765.0H721.2M717.0 760.8L721.2 765.0L717.0 769.2" stroke="#0F766E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g id="Company-Featured-2">
+    <rect x="120" y="836" width="1200" height="304" rx="16" fill="#FFFFFF" stroke="#70737C" stroke-opacity="0.14"/>
+  <g id="Capture-Slot-맵 편집 화면 이미">
+    <rect x="148" y="862" width="404" height="252" rx="12" fill="#F7F7F8"/>
+    <g clip-path="url(#slot_2)">
+    <rect x="148" y="862" width="404" height="32" fill="#FFFFFF"/>
+    <line x1="148" y1="894" x2="552" y2="894" stroke="#70737C" stroke-opacity="0.12" stroke-width="1"/>
+    <circle cx="164" cy="878" r="3.2" fill="#D4D6DA"/>
+    <circle cx="175" cy="878" r="3.2" fill="#D4D6DA"/>
+    <circle cx="186" cy="878" r="3.2" fill="#D4D6DA"/>
+    <text x="538" y="882" fill="#2C2D32" fill-opacity="0.58" font-family="'SF Mono', 'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" font-weight="500" letter-spacing="0.0200em" text-anchor="end">16:10 · Screen slot</text>
+    </g>
+    <rect x="148" y="862" width="404" height="252" rx="12" fill="none" stroke="#70737C" stroke-opacity="0.14"/>
+    <rect x="164" y="908" width="372" height="190" rx="8" fill="none" stroke="#70737C" stroke-opacity="0.18" stroke-dasharray="4 4"/>
+    <circle cx="350.0" cy="981.0" r="22" fill="#FFFFFF" stroke="#70737C" stroke-opacity="0.14"/>
+    <rect x="341.0" y="973.5" width="18" height="15" rx="2.5" stroke="#2C2D32" stroke-opacity="0.62" stroke-width="1.5" fill="none"/>
+    <line x1="341.0" y1="978.0" x2="359.0" y2="978.0" stroke="#2C2D32" stroke-opacity="0.62" stroke-width="1.4"/>
+    <path d="M344.5 985.5L348.5 982.0L351.5 984.5L354.0 982.5L356.5 985.5" stroke="#2C2D32" stroke-opacity="0.62" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="350.0" y="1019.0" fill="#222429" fill-opacity="0.86" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="600" letter-spacing="0.0140em" text-anchor="middle">맵 편집 화면 이미지 위치</text>
+    <text x="350.0" y="1040.0" fill="#2C2D32" fill-opacity="0.66" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="500" letter-spacing="0.0200em" text-anchor="middle">대규모 맵 에디터 · 노드 설정 UI 캡처 슬롯</text>
+  </g>
+    <rect x="588" y="868" width="192" height="24" rx="12" fill="#EAF5F3"/>
+    <text x="598" y="884.2" fill="#115E59" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">세미티에스 · 2025.07 – 2026.05</text>
+    <text x="588" y="930" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="26" font-weight="700" letter-spacing="-0.0200em">SINGAL Zone Editor</text>
+    <text x="588" y="972" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="500" letter-spacing="0.0060em">대규모 맵 편집과 설정 데이터 저장·복원을 개발했습니다.</text>
+    <text x="588" y="1000" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="500" letter-spacing="0.0060em">화면 렌더링과 인접 관계 계산을 분리했습니다.</text>
+    <rect x="588" y="1034" width="67" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="598" y="1051.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">Electron</text>
+    <rect x="663" y="1034" width="53" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="673" y="1051.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">Vue 3</text>
+    <rect x="724" y="1034" width="55" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="734" y="1051.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">PixiJS</text>
+    <rect x="787" y="1034" width="91" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="797" y="1051.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">Web Worker</text>
+    <text x="588" y="1096" fill="#2C2D32" fill-opacity="0.78" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="500" letter-spacing="0.0140em">주요 작업: viewport culling · Worker · Redis 저장</text>
+  </g>
+    <line x1="120" y1="1176" x2="1320" y2="1176" stroke="#70737C" stroke-opacity="0.14" stroke-width="1"/>
+  <g id="Company-List-1">
+    <text x="136" y="1220" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="21" font-weight="700" letter-spacing="-0.0080em">Heroball Infinity &amp; Trala Admin</text>
+    <text x="1304" y="1220" fill="#2C2D32" fill-opacity="0.72" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="500" letter-spacing="0.0140em" text-anchor="end">트랄라랩 · 2023.08 – 2024.09</text>
+    <text x="136" y="1254" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="500" letter-spacing="0.0060em">게임 이벤트 웹과 운영 백오피스</text>
+    <line x1="335" y1="1241" x2="335" y2="1257" stroke="#70737C" stroke-opacity="0.22" stroke-width="1"/>
+    <rect x="349" y="1236" width="60" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="359" y="1253.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">Next.js</text>
+    <rect x="417" y="1236" width="53" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="427" y="1253.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">React</text>
+    <rect x="478" y="1236" width="105" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="488" y="1253.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">WalletConnect</text>
+    <line x1="120" y1="1288" x2="1320" y2="1288" stroke="#70737C" stroke-opacity="0.14" stroke-width="1"/>
+  </g>
+  <g id="Company-List-2">
+    <text x="136" y="1332" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="21" font-weight="700" letter-spacing="-0.0080em">Xangle Web Platform</text>
+    <text x="1304" y="1332" fill="#2C2D32" fill-opacity="0.72" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="500" letter-spacing="0.0140em" text-anchor="end">크로스앵글 · 2022.02 – 2023.06</text>
+    <text x="136" y="1366" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="500" letter-spacing="0.0060em">리서치 운영·실시간 시세·SSR 전환</text>
+    <line x1="354" y1="1353" x2="354" y2="1369" stroke="#70737C" stroke-opacity="0.22" stroke-width="1"/>
+    <rect x="368" y="1348" width="53" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="378" y="1365.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">Vue 3</text>
+    <rect x="429" y="1348" width="58" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="439" y="1365.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">Nuxt 3</text>
+    <line x1="120" y1="1400" x2="1320" y2="1400" stroke="#70737C" stroke-opacity="0.14" stroke-width="1"/>
+  </g>
+  <g id="Company-List-3">
+    <text x="136" y="1444" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="21" font-weight="700" letter-spacing="-0.0080em">동대문구 데이터센터</text>
+    <text x="1304" y="1444" fill="#2C2D32" fill-opacity="0.72" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="500" letter-spacing="0.0140em" text-anchor="end">피타그래프 · 2021.08 – 2022.01</text>
+    <text x="136" y="1478" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="500" letter-spacing="0.0060em">공공 상권 데이터 조회와 지도 시각화</text>
+    <line x1="364" y1="1465" x2="364" y2="1481" stroke="#70737C" stroke-opacity="0.22" stroke-width="1"/>
+    <rect x="378" y="1460" width="53" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="388" y="1477.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">React</text>
+    <rect x="439" y="1460" width="47" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="449" y="1477.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">Java</text>
+    <rect x="494" y="1460" width="88" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="504" y="1477.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">PostgreSQL</text>
+    <line x1="120" y1="1512" x2="1320" y2="1512" stroke="#70737C" stroke-opacity="0.14" stroke-width="1"/>
+  </g>
+  </g>
+  <g id="Side-Projects-Section">
+    <circle cx="123" cy="1571.5" r="3" fill="#0F766E"/>
+    <text x="132" y="1576" fill="#0F766E" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="13" font-weight="600" letter-spacing="0.0150em">직접 기획하거나 팀으로 만든 작업</text>
+    <text x="120" y="1618" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="30" font-weight="700" letter-spacing="-0.0240em">사이드 프로젝트</text>
+  <g id="Side-Card-1">
+    <rect x="120" y="1652" width="588" height="288" rx="16" fill="#FFFFFF" stroke="#70737C" stroke-opacity="0.14"/>
+    <rect x="148" y="1678" width="253" height="24" rx="12" fill="#70737C" fill-opacity="0.08"/>
+    <text x="158" y="1694.2" fill="#2C2D32" fill-opacity="0.78" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">1인 개발 · 2024.10 – 2024.12 / 이후 유지보수</text>
+    <text x="148" y="1740" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="26" font-weight="700" letter-spacing="-0.0200em">Readly</text>
+    <text x="148" y="1780" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="500" letter-spacing="0.0060em">독서 기록 서비스의 기획·화면·API·DB·배포</text>
+    <text x="148" y="1808" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="500" letter-spacing="0.0060em">중복 집계 수정과 프로덕션 API 장애 복구</text>
+    <rect x="148" y="1842" width="60" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="158" y="1859.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">Next.js</text>
+    <rect x="216" y="1842" width="63" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="226" y="1859.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">Node.js</text>
+    <rect x="287" y="1842" width="88" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="297" y="1859.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">PostgreSQL</text>
+    <line x1="148" y1="1888" x2="680" y2="1888" stroke="#70737C" stroke-opacity="0.09" stroke-width="1"/>
+    <text x="148" y="1918" fill="#0F766E" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="600" letter-spacing="0.0080em">서비스 방문</text>
+    <path d="M221.0 1917.9L229.1 1909.8M223.4 1909.8H229.1V1915.5" stroke="#0F766E" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g id="Side-Card-2">
+    <rect x="732" y="1652" width="588" height="288" rx="16" fill="#FFFFFF" stroke="#70737C" stroke-opacity="0.14"/>
+    <rect x="760" y="1678" width="171" height="24" rx="12" fill="#70737C" fill-opacity="0.08"/>
+    <text x="770" y="1694.2" fill="#2C2D32" fill-opacity="0.78" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">2인 팀 · 2026.07 – 2026.08</text>
+    <text x="760" y="1740" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="26" font-weight="700" letter-spacing="-0.0200em">ASH//ERROR</text>
+    <text x="760" y="1780" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="500" letter-spacing="0.0060em">Phaser 기반 2D 액션 게임의 전투·진행·비주얼</text>
+    <text x="760" y="1808" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="16" font-weight="500" letter-spacing="0.0060em">5개 스테이지와 무기 4종, 자동화 테스트와 실제 플레이</text>
+    <rect x="760" y="1842" width="71" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="770" y="1859.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">Phaser 4</text>
+    <rect x="839" y="1842" width="53" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="849" y="1859.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">React</text>
+    <rect x="900" y="1842" width="83" height="26" rx="6" fill="#70737C" fill-opacity="0.08"/>
+    <text x="910" y="1859.2" fill="#222429" fill-opacity="0.84" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="12" font-weight="600" letter-spacing="0.0150em">TypeScript</text>
+    <line x1="760" y1="1888" x2="1292" y2="1888" stroke="#70737C" stroke-opacity="0.09" stroke-width="1"/>
+    <text x="760" y="1918" fill="#0F766E" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="600" letter-spacing="0.0080em">서비스 방문</text>
+    <path d="M833.0 1917.9L841.1 1909.8M835.4 1909.8H841.1V1915.5" stroke="#0F766E" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  </g>
+  <g id="Resume-Bridge-Banner">
+    <rect x="120" y="1992" width="1200" height="120" rx="16" fill="#F7F7F8" stroke="#70737C" stroke-opacity="0.14"/>
+    <text x="156" y="2042" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="22" font-weight="700" letter-spacing="-0.0200em">프로젝트가 경력 안에서 어떻게 이어졌는지 궁금하다면</text>
+    <text x="156" y="2074" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="500" letter-spacing="0.0060em">회사별 역할과 주요 업무를 이력에서 볼 수 있습니다.</text>
+    <rect x="1144" y="2030" width="140" height="44" rx="10" fill="#FFFFFF" stroke="#70737C" stroke-opacity="0.22"/>
+    <text x="1162" y="2057.25" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="600" letter-spacing="0.0060em">이력 살펴보기</text>
+    <path d="M1253.3 2052.0H1263.5M1259.3 2047.8L1263.5 2052.0L1259.3 2056.2" stroke="#171719" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g id="Footer">
+    <line x1="120" y1="2230" x2="1320" y2="2230" stroke="#70737C" stroke-opacity="0.14" stroke-width="1"/>
+    <text x="120" y="2274" fill="#171719" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="15" font-weight="700" letter-spacing="0.0060em">서지영</text>
+    <circle cx="171" cy="2269" r="1.8" fill="#2C2D32" fill-opacity="0.5"/>
+    <text x="181" y="2274" fill="#2C2D32" fill-opacity="0.74" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="500" letter-spacing="0.0140em">Software Engineer</text>
+    <text x="948" y="2274" fill="#222429" fill-opacity="0.82" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="500" letter-spacing="0.0140em">이력</text>
+    <text x="1004" y="2274" fill="#222429" fill-opacity="0.82" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="500" letter-spacing="0.0140em">포트폴리오</text>
+    <line x1="1098" y1="2262" x2="1098" y2="2277" stroke="#70737C" stroke-opacity="0.18" stroke-width="1"/>
+    <text x="1124" y="2274" fill="#2C2D32" fill-opacity="0.8" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="600" letter-spacing="0.0080em">GitHub</text>
+    <path d="M1178.4 2273.9L1186.5 2265.8M1180.8 2265.8H1186.5V2271.5" stroke="#2C2D32" stroke-opacity="0.8" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="1263.477171875" y="2274" fill="#2C2D32" fill-opacity="0.8" font-family="Pretendard, 'Pretendard Variable', 'Pretendard JP', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif" font-size="14" font-weight="600" letter-spacing="0.0080em">이메일</text>
+    <path d="M1308.6 2273.9L1316.7 2265.8M1311.0 2265.8H1316.7V2271.5" stroke="#2C2D32" stroke-opacity="0.8" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>
