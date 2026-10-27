@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
 import { Eyebrow, Stack } from "@/components/shared";
-import { MapArchitecture } from "@/components/map-architecture";
+import { ProjectArchitecture } from "@/components/project-architectures";
 import { experiences, projects } from "@/lib/content";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -31,11 +31,12 @@ export default async function ProjectPage({ params }: Props) {
   );
   const nextProject =
     projects[(projects.indexOf(project) + 1) % projects.length];
+  const portfolioBackHref = `/portfolio?category=${project.category}`;
   return (
     <main id="main-content" className="page-container pb-14 md:pb-20">
       <div className="pt-8 md:pt-10">
         <Link
-          href="/portfolio"
+          href={portfolioBackHref}
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
         >
           <ArrowLeft size={16} />
@@ -102,7 +103,7 @@ export default async function ProjectPage({ params }: Props) {
               <p className="prose-copy">{project.approach}</p>
             </div>
           </div>
-          {project.slug === "singal" && <MapArchitecture />}
+          <ProjectArchitecture slug={project.slug} />
           <div className="mt-8 rounded-xl border border-primary/20 bg-brand-subtle p-6 md:p-7">
             <h3 className="mb-3 text-base font-bold text-brand-strong">
               결과와 검증
@@ -160,7 +161,7 @@ export default async function ProjectPage({ params }: Props) {
           className="mt-12 flex flex-col justify-between gap-4 border-t pt-7 sm:flex-row"
         >
           <Button asChild variant="outline" className="h-11 rounded-xl">
-            <Link href="/portfolio">
+            <Link href={portfolioBackHref}>
               <ArrowLeft size={16} />
               포트폴리오 목록으로
             </Link>

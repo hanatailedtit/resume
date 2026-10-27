@@ -1,12 +1,20 @@
 "use client";
 
+import { Suspense, useEffect, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ProjectCard } from "@/components/shared";
 import { projects } from "@/lib/content";
 
-export function ProjectTabs() {
+function ProjectTabsView({
+  activeTab,
+  onTabChange,
+}: {
+  activeTab: string;
+  onTabChange?: (value: string) => void;
+}) {
   return (
-    <Tabs defaultValue="company" className="gap-0">
+    <Tabs value={activeTab} onValueChange={onTabChange} className="gap-0">
       <TabsList
         variant="line"
         aria-label="프로젝트 분류"
@@ -49,5 +57,40 @@ export function ProjectTabs() {
         </TabsContent>
       ))}
     </Tabs>
+  );
+}
+
+function ProjectTabsInner() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const queryCategory = searchParams.get("category") || searchParams.get("tab");
+  const urlTab = queryCategory === "side" ? "side" : "company";
+
+  const [activeTab, setActiveTab] = useState(urlTab);
+
+  useEffect(() => {
+    setActiveTab(urlTab);
+  }, [urlTab]);
+
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete("tab");
+    params.set("category", value);
+    router.push(`${pathname}?${params.toString()}`, { scroll: false });
+  };
+
+  return (
+    <ProjectTabsView activeTab={activeTab} onTabChange={handleTabChange} />
+  );
+}
+
+export function ProjectTabs() {
+  return (
+    <Suspense fallback={<ProjectTabsView activeTab="company" />}>
+      <ProjectTabsInner />
+    </Suspense>
   );
 }
