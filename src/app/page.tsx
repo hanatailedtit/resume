@@ -125,7 +125,7 @@ export default function Home() {
               title: "포트폴리오",
               count: `${projects.length}개 프로젝트`,
               subtitle: "어떤 문제를, 어떻게 풀었는지",
-              description: "회사 프로젝트 5개 · 사이드 프로젝트 2개",
+              description: `회사 프로젝트 ${projects.filter((project) => project.category === "company").length}개 · 사이드 프로젝트 ${projects.filter((project) => project.category === "side").length}개`,
               href: "/portfolio",
               cta: "포트폴리오 전체 보기",
             },

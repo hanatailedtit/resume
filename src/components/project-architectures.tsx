@@ -722,6 +722,44 @@ export function ProjectArchitecture({ slug }: { slug: string }) {
       return <MapArchitecture />;
     case "zone-editor":
       return <ZoneEditorArchitecture />;
+    case "pomerium-space":
+      return (
+        <figure className="my-8 rounded-2xl border bg-subtle p-6 md:p-9">
+          <figcaption className="mb-6 text-sm font-semibold text-muted-foreground">
+            공통 테마와 반응형 페이지 구성
+          </figcaption>
+          <div className="grid items-center gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
+            {[
+              ["디자인 토큰", "디자인 시스템 컬러 상수"],
+              ["Material UI 테마", "라이트·다크 모드 컬러 매핑"],
+              ["React 컴포넌트", "헤더·슬라이더·파트너·반응형 화면"],
+            ].map(([title, description], index) => (
+              <div key={title} className="contents">
+                {index > 0 && (
+                  <>
+                    <ArrowRight
+                      className="hidden text-primary md:block"
+                      size={20}
+                      aria-hidden="true"
+                    />
+                    <ArrowDown
+                      className="mx-auto text-primary md:hidden"
+                      size={20}
+                      aria-hidden="true"
+                    />
+                  </>
+                )}
+                <div className="rounded-xl border bg-background p-5">
+                  <p className="text-base font-semibold">{title}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </figure>
+      );
     case "heroball-trala":
       return <HeroballArchitecture />;
     case "xangle":

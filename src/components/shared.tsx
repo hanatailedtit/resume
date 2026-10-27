@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -69,7 +70,18 @@ export function ProjectCard({
 }) {
   return (
     <Card className="group relative h-full gap-0 overflow-hidden rounded-2xl border bg-background py-0 shadow-none transition-colors hover:border-primary/45 focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-4">
-      <CardContent className="flex h-full flex-col p-6 md:p-7">
+      {!compact && project.screenshots?.[0] && (
+        <div className="relative aspect-[16/10] shrink-0 border-b bg-subtle">
+          <Image
+            src={project.screenshots[0].src}
+            alt={project.screenshots[0].alt}
+            fill
+            sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1279px) calc((100vw - 104px) / 2), 588px"
+            className="object-contain p-3 md:p-4"
+          />
+        </div>
+      )}
+      <CardContent className="flex flex-1 flex-col p-6 md:p-7">
         <div className="mb-4">
           <Badge
             variant={project.category === "company" ? "default" : "secondary"}

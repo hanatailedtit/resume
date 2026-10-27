@@ -67,12 +67,14 @@ export const experiences = [
     period: "2025.01.13 - 2025.04.12",
     role: "Frontend Engineer",
     team: "",
-    summary: "Pomerium Space 메인 페이지 개편",
+    summary: "Pomerium Space 메인 페이지 전체 개발",
     tasks: [
+      "헤더부터 콘텐츠 섹션·파트너·푸터까지 메인 페이지 전체 구현",
       "디자인 토큰 기반 라이트·다크 테마 구현",
       "다양한 화면 크기에 대응하는 반응형 UI 개발",
     ],
     stack: ["React", "TypeScript", "Material UI", "Vite"],
+    project: "pomerium-space",
   },
   {
     id: "tralalab",
@@ -139,6 +141,15 @@ export type Project = {
   result: string;
   work: { title: string; description: string }[];
   experience?: string;
+  website?: string;
+  screenshots?: {
+    src: string;
+    width: number;
+    height: number;
+    alt: string;
+    caption: string;
+    group?: "데스크톱 섹션별 화면" | "라이트·다크 모드 비교" | "모바일 반응형";
+  }[];
 };
 
 export const projects: Project[] = [
@@ -216,12 +227,201 @@ export const projects: Project[] = [
     experience: "semi-ts",
   },
   {
+    slug: "pomerium-space",
+    title: "Pomerium Space",
+    company: "시프트클릭",
+    category: "company",
+    period: "2025.01 - 2025.02",
+    role: "프론트엔드 · 메인 페이지 전체 개발",
+    screenshots: [
+      {
+        src: "/projects/pomerium-hero.webp",
+        width: 1440,
+        height: 1000,
+        alt: "Pomerium Space 헤더·히어로 · 메인 배너와 슬라이더 실제 데스크톱 화면",
+        caption: "헤더·히어로 · 메인 배너와 슬라이더",
+        group: "데스크톱 섹션별 화면",
+      },
+      {
+        src: "/projects/pomerium-coin.webp",
+        width: 1240,
+        height: 969,
+        alt: "Pomerium Space 코인 소개 · 통계와 정보 카드 실제 데스크톱 화면",
+        caption: "코인 소개 · 통계와 정보 카드",
+        group: "데스크톱 섹션별 화면",
+      },
+      {
+        src: "/projects/pomerium-ecosystem.webp",
+        width: 1240,
+        height: 681,
+        alt: "Pomerium Space 에코시스템 · 서비스 소개 카드 실제 데스크톱 화면",
+        caption: "에코시스템 · 서비스 소개 카드",
+        group: "데스크톱 섹션별 화면",
+      },
+      {
+        src: "/projects/pomerium-community.webp",
+        width: 1440,
+        height: 741,
+        alt: "Pomerium Space 커뮤니티 · 채널 목록과 슬라이더 실제 데스크톱 화면",
+        caption: "커뮤니티 · 채널 목록과 슬라이더",
+        group: "데스크톱 섹션별 화면",
+      },
+      {
+        src: "/projects/pomerium-news.webp",
+        width: 1440,
+        height: 761,
+        alt: "Pomerium Space 뉴스 · 업데이트 카드 실제 데스크톱 화면",
+        caption: "뉴스 · 업데이트 카드",
+        group: "데스크톱 섹션별 화면",
+      },
+      {
+        src: "/projects/pomerium-exchanges.webp",
+        width: 1440,
+        height: 933,
+        alt: "Pomerium Space 거래소 · 파트너 로고 배치 실제 데스크톱 화면",
+        caption: "거래소 · 파트너 로고 배치",
+        group: "데스크톱 섹션별 화면",
+      },
+      {
+        src: "/projects/pomerium-staking.webp",
+        width: 1440,
+        height: 630,
+        alt: "Pomerium Space 스테이킹 · 서비스 안내 배너 실제 데스크톱 화면",
+        caption: "스테이킹 · 서비스 안내 배너",
+        group: "데스크톱 섹션별 화면",
+      },
+      {
+        src: "/projects/pomerium-tokens.webp",
+        width: 1440,
+        height: 1039,
+        alt: "Pomerium Space 토큰·NFT · 콘텐츠 캐러셀 실제 데스크톱 화면",
+        caption: "토큰·NFT · 콘텐츠 캐러셀",
+        group: "데스크톱 섹션별 화면",
+      },
+      {
+        src: "/projects/pomerium-services.webp",
+        width: 1440,
+        height: 593,
+        alt: "Pomerium Space Web3 서비스 · 솔루션 카드 실제 데스크톱 화면",
+        caption: "Web3 서비스 · 솔루션 카드",
+        group: "데스크톱 섹션별 화면",
+      },
+      {
+        src: "/projects/pomerium-partners.webp",
+        width: 1440,
+        height: 625,
+        alt: "Pomerium Space 파트너 · 로고와 제휴 안내 실제 데스크톱 화면",
+        caption: "파트너 · 로고와 제휴 안내",
+        group: "데스크톱 섹션별 화면",
+      },
+      {
+        src: "/projects/pomerium-footer-complete.webp",
+        width: 1440,
+        height: 1000,
+        alt: "Pomerium Space 하단 CTA·푸터 · 사이트 메뉴와 테마 전환 실제 데스크톱 화면",
+        caption: "하단 CTA·푸터 · 사이트 메뉴와 테마 전환",
+        group: "데스크톱 섹션별 화면",
+      },
+      {
+        src: "/projects/pomerium-theme-coin.webp",
+        width: 2552,
+        height: 1093,
+        alt: "같은 코인 소개 섹션의 실제 라이트 모드와 다크 모드를 좌우로 비교한 화면",
+        caption: "코인 소개 · 왼쪽 라이트 모드 / 오른쪽 다크 모드",
+        group: "라이트·다크 모드 비교",
+      },
+      {
+        src: "/projects/pomerium-theme-community.webp",
+        width: 2952,
+        height: 865,
+        alt: "같은 커뮤니티 섹션의 실제 라이트 모드와 다크 모드를 좌우로 비교한 화면",
+        caption: "커뮤니티 · 왼쪽 라이트 모드 / 오른쪽 다크 모드",
+        group: "라이트·다크 모드 비교",
+      },
+      {
+        src: "/projects/pomerium-mobile-overview.webp",
+        width: 1680,
+        height: 968,
+        alt: "390px 모바일 반응형 화면 4장을 가로로 나란히 배치: 메인·코인 소개·에코시스템·커뮤니티",
+        caption: "메인·코인 소개·에코시스템·커뮤니티",
+        group: "모바일 반응형",
+      },
+      {
+        src: "/projects/pomerium-mobile-content.webp",
+        width: 1680,
+        height: 968,
+        alt: "390px 모바일 반응형 화면 4장을 가로로 나란히 배치: 뉴스·토큰과 NFT·서비스·파트너",
+        caption: "뉴스·토큰과 NFT·서비스·파트너",
+        group: "모바일 반응형",
+      },
+    ],
+    description:
+      "헤더부터 푸터까지 메인 페이지 전체를 개발하고, 라이트·다크 테마와 모바일 반응형 UI를 구현했습니다.",
+    stack: ["React", "TypeScript", "Material UI", "Vite"],
+    overview:
+      "Pomerium Space 메인 페이지의 프론트엔드 전체를 개발했습니다. 헤더와 히어로 슬라이더부터 코인 소개, 에코시스템, 커뮤니티, 뉴스, 스테이킹, 토큰·NFT, 서비스·파트너, 푸터까지 구현하고 라이트·다크 테마와 모바일 반응형 UI를 적용했습니다.",
+    caseTitle: "테마와 반응형 화면에 같은 디자인 기준 적용하기",
+    problem:
+      "디자인 시스템의 컬러를 라이트·다크 테마에 일관되게 적용하고, 메인 콘텐츠와 탐색 메뉴가 모바일에서도 동작하도록 구성해야 했습니다.",
+    approach:
+      "컬러값을 상수로 정의해 MUI 다크모드 설정과 매핑했습니다. 헤더와 에코시스템 드롭다운을 개발하고 react-slick 기반 슬라이더, 파트너 섹션과 모바일 반응형 레이아웃을 구성했습니다.",
+    result:
+      "메인 페이지의 전체 섹션을 개발하고 테마별 컬러와 반응형 배치를 적용했습니다.",
+    work: [
+      {
+        title: "테마 구성",
+        description: "MUI 라이트·다크 모드와 디자인 시스템 컬러 매핑",
+      },
+      {
+        title: "탐색과 콘텐츠",
+        description:
+          "헤더·슬라이더부터 각 콘텐츠 섹션·파트너·푸터까지 전체 구현",
+      },
+      {
+        title: "반응형 UI",
+        description: "데스크톱과 모바일 뷰포트에 맞춘 화면 배치",
+      },
+    ],
+    experience: "shiftclick",
+    website: "https://pomerium.space/",
+  },
+  {
     slug: "heroball-trala",
     title: "Heroball Infinity & Trala Admin",
     company: "트랄라랩",
     category: "company",
     period: "2023.08 - 2024.08",
     role: "웹 프론트엔드",
+    screenshots: [
+      {
+        src: "/projects/heroball-main.webp",
+        width: 1600,
+        height: 909,
+        alt: "Heroball Infinity 이벤트 메인 화면과 지갑 연결 메뉴",
+        caption: "Heroball Infinity 이벤트 메인",
+      },
+      {
+        src: "/projects/heroball-gacha.webp",
+        width: 1600,
+        height: 950,
+        alt: "Heroball Infinity의 게임 아이템과 NFT 가챠 화면",
+        caption: "게임 아이템·NFT 가챠",
+      },
+      {
+        src: "/projects/trala-dashboard.webp",
+        width: 1600,
+        height: 811,
+        alt: "Trala Admin의 운영 지표와 시계열 차트 대시보드",
+        caption: "Trala Admin 운영 대시보드",
+      },
+      {
+        src: "/projects/trala-storybook.webp",
+        width: 1600,
+        height: 943,
+        alt: "Storybook에서 문서화한 Trala 공통 버튼 컴포넌트",
+        caption: "Storybook 공통 UI 컴포넌트",
+      },
+    ],
     description:
       "로그인과 구매부터 결과 확인까지 이어지는 게임 이벤트 웹과 데이터 운영 대시보드를 개발했습니다.",
     stack: ["Next.js", "React", "TanStack Query", "TanStack Table"],
@@ -257,6 +457,29 @@ export const projects: Project[] = [
     category: "company",
     period: "2022.02 - 2023.05",
     role: "Vue · Nuxt 프론트엔드",
+    screenshots: [
+      {
+        src: "/projects/xangle-research.webp",
+        width: 857,
+        height: 332,
+        alt: "리서치 콘텐츠를 카드 그리드로 보여주는 Xangle 목록",
+        caption: "리서치 카드 목록",
+      },
+      {
+        src: "/projects/xangle-calendar.webp",
+        width: 960,
+        height: 663,
+        alt: "가상자산 이벤트를 날짜별로 보여주는 Xangle 인사이트 캘린더",
+        caption: "인사이트 이벤트 캘린더",
+      },
+      {
+        src: "/projects/xangle-analytics.webp",
+        width: 531,
+        height: 374,
+        alt: "지표 목록과 시계열 차트로 구성한 Xangle 애널리틱스",
+        caption: "애널리틱스 지표 차트",
+      },
+    ],
     description:
       "리서치와 인사이트, 온체인 지표를 보여주는 서비스 웹과 공통 UI를 개발했습니다.",
     stack: ["Vue 3", "Nuxt 3", "Highcharts", "Storybook"],
@@ -293,6 +516,36 @@ export const projects: Project[] = [
     category: "company",
     period: "2021.08 - 2022.01",
     role: "프론트엔드 · 백엔드",
+    screenshots: [
+      {
+        src: "/projects/data-center-map.webp",
+        width: 856,
+        height: 561,
+        alt: "동대문구 스마트지도의 상점 마커와 지도 검색 화면",
+        caption: "우리동네 스마트지도",
+      },
+      {
+        src: "/projects/data-center-analysis.webp",
+        width: 900,
+        height: 604,
+        alt: "상권 경계와 선택 상권의 통계 차트를 함께 보여주는 분석 화면",
+        caption: "시장·점포 상권 분석",
+      },
+      {
+        src: "/projects/data-center-export.webp",
+        width: 859,
+        height: 392,
+        alt: "파일 형식 선택 버튼과 데이터 목록이 있는 내보내기 화면",
+        caption: "공공 데이터 파일 내보내기",
+      },
+      {
+        src: "/projects/data-center-report.webp",
+        width: 774,
+        height: 809,
+        alt: "상권별 주요 지표와 막대 차트를 포함한 상권 분석 보고서",
+        caption: "상권 분석 보고서",
+      },
+    ],
     description:
       "공공 상권 데이터를 지도와 차트로 탐색하는 데이터 서비스를 개발했습니다.",
     stack: ["React", "Java", "PostgreSQL", "OpenLayers"],

@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowUpRight,
+} from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
 import { Eyebrow, Stack } from "@/components/shared";
 import { ProjectArchitecture } from "@/components/project-architectures";
@@ -32,6 +37,16 @@ export default async function ProjectPage({ params }: Props) {
   const nextProject =
     projects[(projects.indexOf(project) + 1) % projects.length];
   const portfolioBackHref = `/portfolio?category=${project.category}`;
+  const screenshotGroups = [
+    ...new Set(
+      project.screenshots?.map((image) => image.group ?? "프로젝트 화면"),
+    ),
+  ].map((title) => ({
+    title,
+    images: project.screenshots!.filter(
+      (image) => (image.group ?? "프로젝트 화면") === title,
+    ),
+  }));
   return (
     <main id="main-content" className="page-container pb-14 md:pb-20">
       <div className="pt-8 md:pt-10">
@@ -52,6 +67,19 @@ export default async function ProjectPage({ params }: Props) {
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
           {project.description}
         </p>
+        {project.website && (
+          <Button
+            asChild
+            variant="outline"
+            className="mt-6 h-11 rounded-xl px-5"
+          >
+            <a href={project.website} target="_blank" rel="noreferrer">
+              서비스 방문
+              <ArrowUpRight size={16} />
+              <span className="sr-only"> (새 탭)</span>
+            </a>
+          </Button>
+        )}
         <dl className="mt-9 grid gap-6 rounded-2xl bg-subtle p-6 md:grid-cols-[1fr_1.3fr_1.8fr] md:p-7">
           <div>
             <dt className="text-xs font-semibold text-muted-foreground">
@@ -76,6 +104,86 @@ export default async function ProjectPage({ params }: Props) {
         </dl>
       </section>
       <div className="mx-auto max-w-[960px]">
+        {screenshotGroups.map((group, groupIndex) => (
+          <section
+            key={group.title}
+            className="pt-10 md:pt-14"
+            aria-labelledby={`screenshots-heading-${groupIndex}`}
+          >
+            <h2
+              id={`screenshots-heading-${groupIndex}`}
+              className="section-title"
+            >
+              {group.title}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              이미지를 선택하면 크게 볼 수 있습니다.
+            </p>
+            <div className="mt-7 grid gap-6 md:grid-cols-2">
+              {group.images.map((screenshot, index) => {
+                const comparison =
+                  group.title === "라이트·다크 모드 비교" ||
+                  group.title === "모바일 반응형";
+                const wide = index === 0 || comparison;
+                return (
+                  <figure
+                    key={screenshot.src}
+                    className={wide ? "min-w-0 md:col-span-2" : "min-w-0"}
+                  >
+                    <div
+                      className={
+                        comparison
+                          ? "overflow-x-auto rounded-xl pb-2 focus-visible:outline-2 focus-visible:outline-primary"
+                          : undefined
+                      }
+                      tabIndex={comparison ? 0 : undefined}
+                      role={comparison ? "region" : undefined}
+                      aria-label={
+                        comparison
+                          ? `${screenshot.caption} 가로 스크롤`
+                          : undefined
+                      }
+                    >
+                      <a
+                        href={screenshot.src}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${screenshot.caption} 크게 보기 (새 탭)`}
+                        className={`relative block overflow-hidden rounded-xl border bg-subtle ${comparison ? "min-w-[760px]" : ""} ${screenshot.group ? "" : "aspect-[16/10]"}`}
+                      >
+                        <Image
+                          src={screenshot.src}
+                          alt={screenshot.alt}
+                          width={screenshot.width}
+                          height={screenshot.height}
+                          loading={
+                            groupIndex === 0 && index === 0 ? "eager" : "lazy"
+                          }
+                          sizes={
+                            comparison
+                              ? "(max-width: 839px) 760px, 960px"
+                              : wide
+                                ? "(max-width: 767px) calc(100vw - 48px), (max-width: 1039px) calc(100vw - 80px), 960px"
+                                : "(max-width: 767px) calc(100vw - 48px), (max-width: 1039px) calc((100vw - 104px) / 2), 468px"
+                          }
+                          className={`${screenshot.group ? "h-auto w-full" : "size-full"} object-contain p-3 md:p-5`}
+                        />
+                      </a>
+                    </div>
+                    <figcaption className="mt-3 flex items-center justify-between gap-3 text-sm leading-relaxed text-muted-foreground">
+                      {screenshot.caption}
+                      <ArrowUpRight
+                        size={15}
+                        className="shrink-0"
+                        aria-hidden="true"
+                      />
+                    </figcaption>
+                  </figure>
+                );
+              })}
+            </div>
+          </section>
+        ))}
         <section className="pt-10 md:pt-14" aria-labelledby="overview-heading">
           <h2 id="overview-heading" className="section-title">
             프로젝트 개요
