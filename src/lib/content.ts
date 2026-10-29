@@ -572,6 +572,73 @@ export const projects: Project[] = [
     experience: "pitagraph",
   },
   {
+    slug: "daily-routine",
+    title: "Daily Routine",
+    company: "개인 프로젝트",
+    category: "side",
+    period: "2023.06 시작 · 2026.10 UI 개편",
+    role: "UI 설계 · 프론트엔드 개발 · Supabase 연동",
+    screenshots: [
+      {
+        src: "/projects/daily-routine-tasks.webp",
+        width: 1440,
+        height: 1059,
+        alt: "카테고리와 상위·하위 할 일을 함께 관리하는 Daily Routine 목록",
+        caption: "할 일 목록 · 테스트 데이터",
+      },
+      {
+        src: "/projects/daily-routine-editor.webp",
+        width: 1440,
+        height: 1000,
+        alt: "Tiptap 도구 모음과 카테고리 선택을 제공하는 Daily Routine 작성 팝업",
+        caption: "할 일 작성 · Tiptap 편집기",
+      },
+      {
+        src: "/projects/daily-routine-statistics.webp",
+        width: 1440,
+        height: 1119,
+        alt: "전체 완료율과 생성일별·카테고리별 현재 완료 상태를 보여주는 Daily Routine 통계",
+        caption: "프로필·완료 현황 · 테스트 데이터",
+      },
+    ],
+    description:
+      "Google 로그인부터 카테고리·하위 할 일, 서식 편집과 완료 현황까지 연결한 반응형 할 일 관리 앱입니다.",
+    stack: [
+      "React",
+      "TypeScript",
+      "Supabase",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Tiptap",
+    ],
+    overview:
+      "업무·공부·일상을 카테고리로 나누고 상위·하위 할 일을 관리하는 웹 앱입니다. Google OAuth와 신규 회원 프로필 등록, 드래그 정렬, Tiptap 서식 편집, 완료 현황을 구현했습니다. 데스크톱 중앙 편집 팝업과 모바일 전체 화면 편집에서 미저장 내용 보호와 저장 실패 시 입력 보존을 적용했습니다.",
+    caseTitle: "중복 저장과 늦게 도착한 조회 응답으로부터 화면 지키기",
+    problem:
+      "같은 렌더 안에서 저장을 연속 호출하면 React 상태가 바뀌기 전에 중복 쓰기가 실행될 수 있었습니다. 이전 조회가 늦게 도착하면 최신 목록을 덮어쓰고, 여러 REST 요청 중 일부만 실패하면 화면과 저장된 데이터가 달라질 수 있었습니다.",
+    approach:
+      "useRef 잠금으로 중복 쓰기를 막고 요청 번호와 마운트 상태로 최신 조회 응답만 반영했습니다. 여러 쓰기는 모두 끝난 뒤 오류를 전달하도록 처리하고, 실패 시 실제 저장 상태를 재조회했습니다. 편집기에서는 실패해도 입력을 보존하고 재시도할 수 있도록 구성했습니다.",
+    result:
+      "중복 쓰기·조회 순서 역전·부분 저장 실패를 재현하는 회귀 테스트를 추가했습니다. 로컬 Supabase 모의 서버를 이용한 브라우저 테스트로 CRUD, 가입, 모바일 편집과 미저장 보호를 검증했습니다.",
+    work: [
+      {
+        title: "할 일과 인증",
+        description:
+          "Google OAuth(PKCE)·회원가입, 카테고리와 상위·하위 할 일 CRUD·완료 연동·정렬",
+      },
+      {
+        title: "서식 편집과 모바일",
+        description:
+          "Tiptap·DOMPurify 기반 HTML 편집, 이미지·표, 모바일 전체 화면과 미저장 변경 보호",
+      },
+      {
+        title: "데이터와 통계",
+        description:
+          "페이지 단위 전체 조회와 Map 기반 그룹화, 생성일별·카테고리별 현재 완료 현황",
+      },
+    ],
+  },
+  {
     slug: "readly",
     title: "Readly",
     company: "1인 개발",

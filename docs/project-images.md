@@ -43,3 +43,13 @@
 - 현재 서비스 화면으로, 재직 당시의 화면과 다를 수 있습니다.
 
 제공된 슬라이드에는 SINGAL·Zone Editor·Readly·ASH//ERROR 화면이 없어 해당 프로젝트에 이미지를 추가하지 않았습니다.
+
+## Daily Routine
+
+`~/daily-routine/test-results/`의 실제 앱 브라우저 테스트 캡처를 비율 변경 없이 WebP로 압축했습니다. 모의 Supabase 서버의 예시 데이터를 사용한 화면이며, 디자인 SVG나 홍보용 목업 이미지를 실제 캡처로 사용하지 않았습니다.
+
+| 파일                                      | 원본                                    | 화면                                      |
+| ----------------------------------------- | --------------------------------------- | ----------------------------------------- |
+| `/projects/daily-routine-tasks.webp`      | `test-results/todos-desktop.png`        | 카테고리·상위/하위 할 일 목록             |
+| `/projects/daily-routine-editor.webp`     | `test-results/editor-popup-desktop.png` | Tiptap 편집 팝업                          |
+| `/projects/daily-routine-statistics.webp` | `test-results/profile-desktop.png`      | 프로필·생성일별/카테고리별 현재 완료 상태 |

@@ -43,7 +43,7 @@ test("resume and featured work only link to existing project pages", () => {
   );
   assert.equal(
     projects.filter((project) => project.category === "side").length,
-    2,
+    3,
   );
 });
 
@@ -51,7 +51,7 @@ test("project screenshots point to local WebP assets with accessible description
   const screenshotProjects = projects.filter(
     (project) => project.screenshots?.length,
   );
-  assert.equal(screenshotProjects.length, 4);
+  assert.equal(screenshotProjects.length, 5);
   for (const project of screenshotProjects) {
     for (const image of project.screenshots!) {
       assert.match(image.src, /^\/projects\/[a-z0-9-]+\.webp$/);

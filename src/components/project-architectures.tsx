@@ -766,6 +766,44 @@ export function ProjectArchitecture({ slug }: { slug: string }) {
       return <XangleArchitecture />;
     case "data-center":
       return <DataCenterArchitecture />;
+    case "daily-routine":
+      return (
+        <figure className="my-8 rounded-2xl border bg-subtle p-6 md:p-9">
+          <figcaption className="mb-6 text-sm font-semibold text-muted-foreground">
+            편집 내용 보존과 저장·조회 상태 동기화
+          </figcaption>
+          <div className="grid items-center gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
+            {[
+              ["할 일 편집", "Tiptap 입력 보존 · HTML 정제"],
+              ["useWorkspace", "ref 쓰기 잠금 · 최신 요청 번호 확인"],
+              ["Supabase REST", "저장 후 재조회 · 부분 실패 시 상태 복구"],
+            ].map(([title, description], index) => (
+              <div key={title} className="contents">
+                {index > 0 && (
+                  <>
+                    <ArrowRight
+                      className="hidden text-primary md:block"
+                      size={20}
+                      aria-hidden="true"
+                    />
+                    <ArrowDown
+                      className="mx-auto text-primary md:hidden"
+                      size={20}
+                      aria-hidden="true"
+                    />
+                  </>
+                )}
+                <div className="rounded-xl border bg-background p-5">
+                  <p className="text-base font-semibold">{title}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </figure>
+      );
     case "readly":
       return <ReadlyArchitecture />;
     case "ash-error":
