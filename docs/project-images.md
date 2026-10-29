@@ -42,7 +42,7 @@
 - 데스크톱 메인·푸터는 1440×1000, 섹션은 1440×1600 뷰포트에서 영역 캡처했습니다. 첫 방문 안내 팝업을 닫고 실제 슬라이더 일시정지를 사용했습니다.
 - 현재 서비스 화면으로, 재직 당시의 화면과 다를 수 있습니다.
 
-제공된 슬라이드에는 SINGAL·Zone Editor·Readly·ASH//ERROR 화면이 없어 해당 프로젝트에 이미지를 추가하지 않았습니다.
+제공된 슬라이드에는 SINGAL·Zone Editor·ASH//ERROR 화면이 없어 해당 프로젝트에 이미지를 추가하지 않았습니다.
 
 ## Daily Routine
 
@@ -53,3 +53,13 @@
 | `/projects/daily-routine-tasks.webp`      | `test-results/todos-desktop.png`        | 카테고리·상위/하위 할 일 목록             |
 | `/projects/daily-routine-editor.webp`     | `test-results/editor-popup-desktop.png` | Tiptap 편집 팝업                          |
 | `/projects/daily-routine-statistics.webp` | `test-results/profile-desktop.png`      | 프로필·생성일별/카테고리별 현재 완료 상태 |
+
+## Readly
+
+`~/readly/docs/images/readme/`에 보관된 실제 화면 캡처를 비율 변경 없이 WebP로 압축했습니다. 메인은 2026-10-28 [운영 사이트](https://readly.createdoodle.dev/) 캡처이며, 기록 작성과 마이페이지는 해당 저장소에 보관된 사용자 제공 캡처입니다. 화면 내용은 수정하지 않았으며, 운영 데이터와 UI는 현재 서비스와 다를 수 있습니다.
+
+| 파일 | 원본 | 화면 |
+| --- | --- | --- |
+| `/projects/readly-home.webp` | `home-desktop.png` | 서비스 소개·독서 기록 그리드 |
+| `/projects/readly-editor.webp` | `record-create-desktop.png` | 도서 검색·카테고리·서식 편집 |
+| `/projects/readly-profile.webp` | `profile-desktop.png` | 도서별 내 기록 검색·관리 |

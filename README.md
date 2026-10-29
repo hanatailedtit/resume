@@ -36,3 +36,5 @@ Heroball·Trala Admin·Xangle·동대문구 데이터센터의 캡처는 제공�
 원본 디자인과 같은 라이트 테마를 사용합니다. 실제 배포 전에 고용 기간·학력·사이드 프로젝트 정보와 GitHub 프로필 주소를 확인하면 됩니다.
 
 Daily Routine은 `~/daily-routine`의 README, `useWorkspace.ts`, 데이터 조회·편집기 코드와 검증 기록을 바탕으로 추가했습니다. 화면 이미지는 해당 저장소의 `test-results/`에 있는 실제 테스트 실행 캡처로, 원격 사용자 데이터가 아닌 모의 Supabase의 예시 데이터입니다. 기간 표시는 2023년 6월 최초 커밋과 2026년 10월 UI 개편 기록을 기준으로 합니다.
+
+Readly의 기능 설명은 `~/readly/README.md`를 바탕으로 보완했습니다. 해당 저장소의 `docs/images/readme/`에 보관된 실제 메인·기록 작성·마이페이지 캡처를 목록과 상세 화면에 연결하고 서비스 방문 링크를 추가했습니다. 파일별 출처는 [프로젝트 이미지 출처](docs/project-images.md)에 정리했습니다.

@@ -645,11 +645,35 @@ export const projects: Project[] = [
     category: "side",
     period: "2024.10 - 2024.12 / 이후 유지보수",
     role: "기획 · 디자인 · 개발 · 배포",
+    website: "https://readly.createdoodle.dev/",
+    screenshots: [
+      {
+        src: "/projects/readly-home.webp",
+        width: 2880,
+        height: 2160,
+        alt: "서비스 소개와 다른 독자의 독서 기록을 그리드로 보여주는 Readly 메인 화면",
+        caption: "메인 · 함께 읽는 독서 기록",
+      },
+      {
+        src: "/projects/readly-editor.webp",
+        width: 1910,
+        height: 1360,
+        alt: "도서 검색과 카테고리 선택, 서식 편집기를 연결한 Readly 기록 작성 화면",
+        caption: "독서 기록 작성 · 도서 검색과 서식 편집",
+      },
+      {
+        src: "/projects/readly-profile.webp",
+        width: 1848,
+        height: 1378,
+        alt: "기록한 책과 작성한 글을 도서별로 모아 검색하는 Readly 마이페이지",
+        caption: "마이페이지 · 도서별 기록 관리",
+      },
+    ],
     description:
-      "읽은 책과 생각을 기록하는 독서 기록 서비스. 기획부터 API·DB·배포까지 직접 만들었습니다.",
+      "읽은 책의 문장과 생각을 기록하고, 같은 책을 읽은 사람들과 나누는 독서 기록 서비스입니다. 도서 검색부터 기록 작성·탐색·내 기록 관리까지 연결하고, 기획부터 API·DB·배포까지 직접 만들었습니다.",
     stack: ["Next.js", "Node.js", "PostgreSQL"],
     overview:
-      "독서 기록 서비스를 기획하고 화면·API·데이터베이스·배포를 직접 구성한 개인 프로젝트입니다. 배포 이후 데이터 집계 오류와 API 장애를 다루며 유지보수했습니다.",
+      "도서를 검색해 인상 깊은 문장과 감상을 남기고, 다른 독자의 기록을 탐색하는 반응형 웹 서비스입니다. Google 로그인, Tiptap 서식 편집, 기록 검색·필터·정렬과 좋아요·댓글을 구현하고, 마이페이지에서 책별로 내 기록을 모아볼 수 있도록 구성했습니다. 화면·API·데이터베이스·배포를 직접 맡았으며, 배포 이후 데이터 집계 오류와 API 장애를 해결하며 유지보수했습니다.",
     caseTitle: "만드는 경험에서 운영하는 경험으로",
     problem:
       "서비스를 배포한 뒤 데이터 중복 집계와 프로덕션 API 장애를 해결해야 했습니다.",
@@ -659,11 +683,13 @@ export const projects: Project[] = [
     work: [
       {
         title: "서비스 기획",
-        description: "독서 기록을 위한 서비스와 화면 구성",
+        description:
+          "도서 검색·기록 작성·다른 독자의 기록 탐색·마이페이지로 이어지는 사용자 흐름 설계",
       },
       {
         title: "전체 개발",
-        description: "Next.js 화면, Node.js API와 PostgreSQL 데이터베이스",
+        description:
+          "Next.js 반응형 화면과 Tiptap 편집기, Node.js API·PostgreSQL 데이터베이스 개발",
       },
       {
         title: "운영과 유지보수",

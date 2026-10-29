@@ -51,7 +51,7 @@ test("project screenshots point to local WebP assets with accessible description
   const screenshotProjects = projects.filter(
     (project) => project.screenshots?.length,
   );
-  assert.equal(screenshotProjects.length, 5);
+  assert.equal(screenshotProjects.length, 6);
   for (const project of screenshotProjects) {
     for (const image of project.screenshots!) {
       assert.match(image.src, /^\/projects\/[a-z0-9-]+\.webp$/);
