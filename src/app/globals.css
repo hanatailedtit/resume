@@ -63,10 +63,26 @@
   h1,
   h2,
   h3,
+  h4,
   p,
-  li {
+  li,
+  dd,
+  dt,
+  figcaption {
     word-break: keep-all;
     overflow-wrap: break-word;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+  p,
+  li,
+  dd,
+  figcaption {
+    text-wrap: pretty;
   }
   a,
   button {
@@ -119,6 +135,7 @@
   font-size: 16px;
   line-height: 1.95;
   color: #62636b;
+  white-space: pre-line;
   @media (min-width: 768px) {
     font-size: 17px;
   }

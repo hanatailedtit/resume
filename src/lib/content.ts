@@ -51,12 +51,12 @@ export const experiences = [
     period: "2025.06.23 - 2026.05",
     role: "Software Engineer",
     team: "AMHS본부 개발팀",
-    summary: "실시간 설비 운영 GUI와 레이아웃 에디터 개발",
+    summary: "실시간 설비 GUI, 레이아웃 에디터와 공통 맵 엔진 개발",
     tasks: [
-      "WebSocket 기반 컨베이어 모니터링·제어와 Replay·CCTV 화면 구현",
-      "Electron 에디터의 존 배치·연결 설정과 Redis 저장·복원 개발",
-      "PixiJS 공통 맵 엔진, 텍스처 캐시와 스프라이트 인덱스 구현",
-      "Pinia 상태 참조 보존과 Vitest·Playwright 회귀 테스트 작성",
+      "운영 GUI와 Electron 에디터가 함께 사용하는 PixiJS 맵 엔진 개발",
+      "화면 범위와 확대 배율에 따른 라벨 표시, 스프라이트 인덱스와 텍스처 재사용 적용",
+      "WebSocket 기반 모니터링 및 제어, Replay와 CCTV 구현\n에디터의 존 배치 및 연결, Redis 저장과 복원 구현",
+      "존 객체 참조 보존과 Import 후 중복 ID 문제 해결\nVitest 및 Playwright 회귀 테스트 작성",
     ],
     stack: ["Vue 3", "TypeScript", "PixiJS", "Electron", "Redis"],
     project: "singal",
@@ -69,8 +69,8 @@ export const experiences = [
     team: "",
     summary: "Pomerium Space 메인 페이지 전체 개발",
     tasks: [
-      "헤더부터 콘텐츠 섹션·파트너·푸터까지 메인 페이지 전체 구현",
-      "디자인 토큰 기반 라이트·다크 테마 구현",
+      "헤더부터 콘텐츠 섹션, 파트너, 푸터까지 메인 페이지 전체 구현",
+      "디자인 토큰 기반 라이트 및 다크 테마 구현",
       "다양한 화면 크기에 대응하는 반응형 UI 개발",
     ],
     stack: ["React", "TypeScript", "Material UI", "Vite"],
@@ -82,12 +82,12 @@ export const experiences = [
     period: "2023.08.21 - 2024.10.01",
     role: "Frontend Engineer",
     team: "WEB3 Division",
-    summary: "게임 이벤트 웹, 운영 대시보드와 모바일 보상 흐름 개발",
+    summary: "게임 이벤트 웹, 운영 대시보드와 모바일 앱 보상 기능 개발",
     tasks: [
-      "HeroBall 이벤트 웹의 로그인·지갑 연결·구매 트랜잭션과 결과 UI 구현",
-      "React Query·TanStack Table 기반 운영 대시보드의 API·검색·페이지네이션 연동",
-      "React Native 앱의 출석·퀘스트·배틀패스와 JSON-RPC 웹뷰 연동",
-      "공통 차트·테이블·입력 컴포넌트와 CSV 업로드 미리보기 구성",
+      "HeroBall 이벤트 웹의 로그인, 지갑 연결, 구매 트랜잭션과 결과 UI 구현",
+      "React Query 및 TanStack Table 기반 운영 대시보드의 API, 검색, 페이지네이션 연동",
+      "React Native 앱의 출석, 퀘스트, 배틀패스와 JSON-RPC 웹뷰 연동",
+      "공통 차트, 테이블, 입력 컴포넌트와 CSV 업로드 미리보기 구성",
     ],
     stack: ["Next.js", "React", "React Native", "TanStack Query"],
     project: "heroball-trala",
@@ -100,10 +100,10 @@ export const experiences = [
     team: "",
     summary: "쟁글 콘텐츠 서비스와 공통 Vue UI 라이브러리 개발",
     tasks: [
-      "인사이트 이벤트 캘린더·리서치 목록과 반응형 화면 개발",
-      "Nuxt 3 환경에서 useAsyncData 기반 SSR·메타정보 보완",
-      "검색·무한스크롤의 상태 초기화와 WebSocket 타입 가드 개선",
-      "공통 UI의 툴팁 경계·다크모드와 Storybook·패키지 빌드 개선",
+      "인사이트 이벤트 캘린더와 리서치 목록, 반응형 화면 개발",
+      "Nuxt 3 환경에서 useAsyncData 기반 SSR 및 메타정보 보완",
+      "검색과 무한스크롤의 상태 초기화와 WebSocket 타입 가드 개선",
+      "공통 UI의 툴팁 경계 및 다크모드 개선\nStorybook과 패키지 빌드 개선",
     ],
     stack: ["Vue 3", "Nuxt 3", "Highcharts", "Storybook"],
     project: "xangle",
@@ -118,7 +118,7 @@ export const experiences = [
     tasks: [
       "공공 데이터 서비스의 프론트엔드와 Java 백엔드 개발",
       "OpenLayers 지도와 Highcharts 분석 시각화 구현",
-      "XLSX·CSV·JSON·XML 데이터 내보내기 구현",
+      "XLSX, CSV, JSON, XML 데이터 내보내기 구현",
     ],
     stack: ["React", "Java", "PostgreSQL", "OpenLayers"],
     project: "data-center",
@@ -136,8 +136,8 @@ export type Project = {
   stack: string[];
   overview: string;
   caseTitle: string;
-  problem: string;
-  approach: string;
+  problem?: string;
+  approach?: string;
   result: string;
   work: { title: string; description: string }[];
   experience?: string;
@@ -148,7 +148,7 @@ export type Project = {
     height: number;
     alt: string;
     caption: string;
-    group?: "데스크톱 섹션별 화면" | "라이트·다크 모드 비교" | "모바일 반응형";
+    group?: "데스크톱 섹션별 화면" | "라이트 및 다크 모드 비교" | "모바일 반응형";
   }[];
 };
 
@@ -159,33 +159,33 @@ export const projects: Project[] = [
     company: "세미티에스",
     category: "company",
     period: "2025.07 - 2026.05",
-    role: "Vue 프론트엔드 · 공통 맵 라이브러리",
+    role: "Vue 프론트엔드\n공통 맵 엔진 설계 및 개발",
     description:
-      "설비의 실시간 상태와 운영 데이터를 연결하고, 두 도구가 함께 사용하는 맵 엔진을 개발했습니다.",
+      "실시간 설비 GUI와 레이아웃 에디터가 공유하는 맵 엔진을 개발하고, 탐색과 편집을 위한 렌더링 구조와 상태 일관성을 개선했습니다.",
     stack: ["Vue 3", "TypeScript", "PixiJS", "WebSocket", "Pinia"],
     overview:
-      "컨베이어의 존·캐리어·알람 상태와 제어 메시지를 운영 화면에 연결했습니다. 과거 상태를 재생하는 Replay, WebSocket 영상 기반 CCTV와 공통 설비 맵 라이브러리를 개발했습니다.",
-    caseTitle: "반복되는 맵 렌더링 작업 줄이기",
+      "컨베이어의 존, 캐리어 및 알람 상태와 제어 메시지를 운영 화면에 연결했습니다.\nConveyor GUI와 Zone Editor의 공통 맵 엔진을 개발하고, 과거 상태를 재생하는 Replay와 WebSocket 영상 기반 CCTV를 구현했습니다.",
+    caseTitle: "설비 탐색과 편집을 위한 공통 맵 엔진 설계",
     problem:
-      "설비 상태가 갱신될 때 자식 스프라이트 탐색과 동일 텍스처 생성이 반복될 수 있었습니다. 상태를 교체하면서 기존 존 객체를 참조하는 화면의 연결도 유지해야 했습니다.",
+      "설비 맵 이동, 확대 및 축소, 존 드래그 중 끊김이 발생해 탐색과 편집이 불편했습니다.\n운영 GUI와 에디터가 함께 사용할 맵 구조를 마련하고, 상태 갱신 시 기존 존 객체를 참조하는 화면과 엔진의 연결도 유지해야 했습니다.",
     approach:
-      "PixiJS 기반 Engine·ViewportManager·ZoneManager로 책임을 나누었습니다. 텍스처를 캐시하고 존별 스프라이트를 Map에 인덱싱했습니다. Pinia에서는 Map을 갱신하되 기존 존 객체의 참조를 보존했습니다.",
+      "PixiJS 기반 Engine, ViewportManager, ZoneManager로 렌더링, 시점 이동, 존 관리의 책임을 나누었습니다.\n화면 범위와 확대 배율에 따라 라벨을 표시하고, 화면 이동 시 라벨 갱신에 debounce를 적용했습니다.\n라벨과 배경 스프라이트를 Map으로 조회하고 텍스처를 재사용했습니다.\nPinia에서는 Map 인스턴스를 교체하되 기존 존 객체의 참조를 보존했습니다.",
     result:
-      "캐시와 인덱스로 반복 생성·탐색을 줄였습니다. Vitest에서 Map 인스턴스 교체와 존 객체 참조 유지, 변경된 상태 반영을 함께 검증했습니다.",
+      "운영 GUI와 에디터가 같은 맵 엔진을 사용하도록 구성하고, 존 객체 참조 유지와 변경 상태 반영을 확인하는 Vitest 회귀 테스트를 작성했습니다.\n사후 합성 3,000존 실험에서는 동일한 시작 화면(1280×720, 배율 0.45)의 라벨 객체가 3,000개에서 45개로 줄었습니다.",
     work: [
       {
         title: "실시간 모니터링과 제어",
         description:
-          "WebSocket 메시지와 존·캐리어·알람 상태, 장비 제어 UI 연결",
+          "WebSocket 메시지로 존, 캐리어 및 알람 상태와 장비 제어 UI 연결",
       },
       {
         title: "Replay와 CCTV",
         description:
-          "시간 순서·배속에 맞춘 과거 상태 재생과 WebSocket 영상 재생",
+          "설비의 과거 상태를 시간순으로 재생하고 배속 조절 지원, WebSocket 영상 재생",
       },
       {
         title: "공통 맵 탐색",
-        description: "미니맵, 선택·이동과 월드 좌표 기반 시점 동기화",
+        description: "미니맵과 선택 및 이동 기능, 월드 좌표 기반 시점 동기화",
       },
     ],
     experience: "semi-ts",
@@ -196,19 +196,19 @@ export const projects: Project[] = [
     company: "세미티에스",
     category: "company",
     period: "2025.06 - 2026.05",
-    role: "Electron · Vue 프론트엔드",
+    role: "Electron 및 Vue 프론트엔드",
     description:
-      "설비 레이아웃의 배치·연결을 편집하고, 설정 데이터를 저장하고 복원하는 데스크톱 도구입니다.",
+      "설비 레이아웃의 배치와 연결을 편집하고, 설정 데이터를 저장하고 복원하는 데스크톱 도구입니다.",
     stack: ["Electron", "Vue 3", "PixiJS", "Redis", "Playwright"],
     overview:
-      "컨베이어·퍼지 버퍼의 존과 연결 관계를 편집하는 Electron 앱입니다. 드래그·연결 설정부터 Redis 저장, 파일 Import/Export와 데이터 일관성 개선까지 담당했습니다.",
+      "컨베이어와 퍼지 버퍼의 존과 연결 관계를 편집하는 Electron 앱입니다.\n운영 GUI와 공유하는 PixiJS 맵 엔진을 사용하며, 드래그와 연결 설정부터 Redis 저장, 파일 Import/Export와 ID 및 좌표 일관성 개선까지 담당했습니다.",
     caseTitle: "설정 가져오기 이후의 중복 ID 해결",
     problem:
       "파일에서 존을 가져온 뒤 ID 인덱스가 복원되지 않아, 새 존을 추가할 때 기존 존과 ID가 중복될 수 있었습니다.",
     approach:
-      "가져온 존 데이터를 기준으로 zoneIdMap을 다시 구성했습니다. DCS별 마지막 ID를 Map으로 관리하고, 관련 존의 연결 정보를 직접 갱신하도록 존 추가 흐름을 개선했습니다.",
+      "가져온 존 데이터를 기준으로 zoneIdMap을 다시 구성했습니다.\nDCS별 마지막 ID를 Map으로 관리하고, 관련 존의 연결 정보를 직접 갱신하도록 존 추가 흐름을 개선했습니다.",
     result:
-      "저장 데이터와 편집 모델의 ID 인덱스를 맞췄습니다. 카메라 연결·해제, 존 드래그와 원위치 이동 후 좌표 인덱스를 확인하는 Playwright 테스트를 추가했습니다.",
+      "저장 데이터와 편집 모델의 ID 인덱스를 맞췄습니다.\n카메라 연결 및 해제, 존 드래그와 원위치 이동 후 좌표 인덱스를 확인하는 Playwright 테스트를 추가했습니다.",
     work: [
       {
         title: "Redis 저장",
@@ -217,11 +217,11 @@ export const projects: Project[] = [
       {
         title: "Import / Export",
         description:
-          "EquipmentConfig·ProductInfo·GroupPort와 그룹 멤버 데이터 복원",
+          "설비, 제품 및 그룹 설정 데이터 복원",
       },
       {
         title: "편집 상호작용",
-        description: "존 배치·드래그·카메라 채널 연결과 자동화 테스트",
+        description: "존 배치, 드래그, 카메라 채널 연결과 자동화 테스트",
       },
     ],
     experience: "semi-ts",
@@ -232,94 +232,94 @@ export const projects: Project[] = [
     company: "시프트클릭",
     category: "company",
     period: "2025.01 - 2025.02",
-    role: "프론트엔드 · 메인 페이지 전체 개발",
+    role: "메인 페이지 프론트엔드 전체 개발",
     screenshots: [
       {
         src: "/projects/pomerium-hero.webp",
         width: 1440,
         height: 1000,
-        alt: "Pomerium Space 헤더·히어로 · 메인 배너와 슬라이더 실제 데스크톱 화면",
-        caption: "헤더·히어로 · 메인 배너와 슬라이더",
+        alt: "Pomerium Space 헤더와 히어로, 메인 배너와 슬라이더 실제 데스크톱 화면",
+        caption: "헤더와 히어로, 메인 배너와 슬라이더",
         group: "데스크톱 섹션별 화면",
       },
       {
         src: "/projects/pomerium-coin.webp",
         width: 1240,
         height: 969,
-        alt: "Pomerium Space 코인 소개 · 통계와 정보 카드 실제 데스크톱 화면",
-        caption: "코인 소개 · 통계와 정보 카드",
+        alt: "Pomerium Space 코인 소개, 통계와 정보 카드 실제 데스크톱 화면",
+        caption: "코인 소개, 통계와 정보 카드",
         group: "데스크톱 섹션별 화면",
       },
       {
         src: "/projects/pomerium-ecosystem.webp",
         width: 1240,
         height: 681,
-        alt: "Pomerium Space 에코시스템 · 서비스 소개 카드 실제 데스크톱 화면",
-        caption: "에코시스템 · 서비스 소개 카드",
+        alt: "Pomerium Space 에코시스템, 서비스 소개 카드 실제 데스크톱 화면",
+        caption: "에코시스템, 서비스 소개 카드",
         group: "데스크톱 섹션별 화면",
       },
       {
         src: "/projects/pomerium-community.webp",
         width: 1440,
         height: 741,
-        alt: "Pomerium Space 커뮤니티 · 채널 목록과 슬라이더 실제 데스크톱 화면",
-        caption: "커뮤니티 · 채널 목록과 슬라이더",
+        alt: "Pomerium Space 커뮤니티, 채널 목록과 슬라이더 실제 데스크톱 화면",
+        caption: "커뮤니티, 채널 목록과 슬라이더",
         group: "데스크톱 섹션별 화면",
       },
       {
         src: "/projects/pomerium-news.webp",
         width: 1440,
         height: 761,
-        alt: "Pomerium Space 뉴스 · 업데이트 카드 실제 데스크톱 화면",
-        caption: "뉴스 · 업데이트 카드",
+        alt: "Pomerium Space 뉴스, 업데이트 카드 실제 데스크톱 화면",
+        caption: "뉴스, 업데이트 카드",
         group: "데스크톱 섹션별 화면",
       },
       {
         src: "/projects/pomerium-exchanges.webp",
         width: 1440,
         height: 933,
-        alt: "Pomerium Space 거래소 · 파트너 로고 배치 실제 데스크톱 화면",
-        caption: "거래소 · 파트너 로고 배치",
+        alt: "Pomerium Space 거래소, 파트너 로고 배치 실제 데스크톱 화면",
+        caption: "거래소, 파트너 로고 배치",
         group: "데스크톱 섹션별 화면",
       },
       {
         src: "/projects/pomerium-staking.webp",
         width: 1440,
         height: 630,
-        alt: "Pomerium Space 스테이킹 · 서비스 안내 배너 실제 데스크톱 화면",
-        caption: "스테이킹 · 서비스 안내 배너",
+        alt: "Pomerium Space 스테이킹, 서비스 안내 배너 실제 데스크톱 화면",
+        caption: "스테이킹, 서비스 안내 배너",
         group: "데스크톱 섹션별 화면",
       },
       {
         src: "/projects/pomerium-tokens.webp",
         width: 1440,
         height: 1039,
-        alt: "Pomerium Space 토큰·NFT · 콘텐츠 캐러셀 실제 데스크톱 화면",
-        caption: "토큰·NFT · 콘텐츠 캐러셀",
+        alt: "Pomerium Space 토큰 및 NFT, 콘텐츠 캐러셀 실제 데스크톱 화면",
+        caption: "토큰 및 NFT, 콘텐츠 캐러셀",
         group: "데스크톱 섹션별 화면",
       },
       {
         src: "/projects/pomerium-services.webp",
         width: 1440,
         height: 593,
-        alt: "Pomerium Space Web3 서비스 · 솔루션 카드 실제 데스크톱 화면",
-        caption: "Web3 서비스 · 솔루션 카드",
+        alt: "Pomerium Space Web3 서비스, 솔루션 카드 실제 데스크톱 화면",
+        caption: "Web3 서비스, 솔루션 카드",
         group: "데스크톱 섹션별 화면",
       },
       {
         src: "/projects/pomerium-partners.webp",
         width: 1440,
         height: 625,
-        alt: "Pomerium Space 파트너 · 로고와 제휴 안내 실제 데스크톱 화면",
-        caption: "파트너 · 로고와 제휴 안내",
+        alt: "Pomerium Space 파트너, 로고와 제휴 안내 실제 데스크톱 화면",
+        caption: "파트너, 로고와 제휴 안내",
         group: "데스크톱 섹션별 화면",
       },
       {
         src: "/projects/pomerium-footer-complete.webp",
         width: 1440,
         height: 1000,
-        alt: "Pomerium Space 하단 CTA·푸터 · 사이트 메뉴와 테마 전환 실제 데스크톱 화면",
-        caption: "하단 CTA·푸터 · 사이트 메뉴와 테마 전환",
+        alt: "Pomerium Space 하단 CTA와 푸터, 사이트 메뉴와 테마 전환 실제 데스크톱 화면",
+        caption: "하단 CTA와 푸터, 사이트 메뉴와 테마 전환",
         group: "데스크톱 섹션별 화면",
       },
       {
@@ -327,55 +327,55 @@ export const projects: Project[] = [
         width: 2552,
         height: 1093,
         alt: "같은 코인 소개 섹션의 실제 라이트 모드와 다크 모드를 좌우로 비교한 화면",
-        caption: "코인 소개 · 왼쪽 라이트 모드 / 오른쪽 다크 모드",
-        group: "라이트·다크 모드 비교",
+        caption: "코인 소개, 왼쪽 라이트 모드 / 오른쪽 다크 모드",
+        group: "라이트 및 다크 모드 비교",
       },
       {
         src: "/projects/pomerium-theme-community.webp",
         width: 2952,
         height: 865,
         alt: "같은 커뮤니티 섹션의 실제 라이트 모드와 다크 모드를 좌우로 비교한 화면",
-        caption: "커뮤니티 · 왼쪽 라이트 모드 / 오른쪽 다크 모드",
-        group: "라이트·다크 모드 비교",
+        caption: "커뮤니티, 왼쪽 라이트 모드 / 오른쪽 다크 모드",
+        group: "라이트 및 다크 모드 비교",
       },
       {
         src: "/projects/pomerium-mobile-overview.webp",
         width: 1680,
         height: 968,
-        alt: "390px 모바일 반응형 화면 4장을 가로로 나란히 배치: 메인·코인 소개·에코시스템·커뮤니티",
-        caption: "메인·코인 소개·에코시스템·커뮤니티",
+        alt: "390px 모바일 반응형 화면 4장을 가로로 나란히 배치: 메인, 코인 소개, 에코시스템, 커뮤니티",
+        caption: "메인, 코인 소개, 에코시스템, 커뮤니티",
         group: "모바일 반응형",
       },
       {
         src: "/projects/pomerium-mobile-content.webp",
         width: 1680,
         height: 968,
-        alt: "390px 모바일 반응형 화면 4장을 가로로 나란히 배치: 뉴스·토큰과 NFT·서비스·파트너",
-        caption: "뉴스·토큰과 NFT·서비스·파트너",
+        alt: "390px 모바일 반응형 화면 4장을 가로로 나란히 배치: 뉴스, 토큰과 NFT, 서비스, 파트너",
+        caption: "뉴스, 토큰과 NFT, 서비스, 파트너",
         group: "모바일 반응형",
       },
     ],
     description:
-      "헤더부터 푸터까지 메인 페이지 전체를 개발하고, 라이트·다크 테마와 모바일 반응형 UI를 구현했습니다.",
+      "헤더부터 푸터까지 메인 페이지 전체를 개발하고, 라이트 및 다크 테마와 모바일 반응형 UI를 구현했습니다.",
     stack: ["React", "TypeScript", "Material UI", "Vite"],
     overview:
-      "Pomerium Space 메인 페이지의 프론트엔드 전체를 개발했습니다. 헤더와 히어로 슬라이더부터 코인 소개, 에코시스템, 커뮤니티, 뉴스, 스테이킹, 토큰·NFT, 서비스·파트너, 푸터까지 구현하고 라이트·다크 테마와 모바일 반응형 UI를 적용했습니다.",
-    caseTitle: "테마와 반응형 화면에 같은 디자인 기준 적용하기",
+      "Pomerium Space 메인 페이지 전체를 개발하고, 라이트 및 다크 테마와 모바일 반응형 UI를 구현했습니다.",
+    caseTitle: "라이트 및 다크 테마와 반응형 화면 구현",
     problem:
-      "디자인 시스템의 컬러를 라이트·다크 테마에 일관되게 적용하고, 메인 콘텐츠와 탐색 메뉴가 모바일에서도 동작하도록 구성해야 했습니다.",
+      "디자인 시스템의 컬러를 라이트 및 다크 테마에 일관되게 적용하고, 메인 콘텐츠와 탐색 메뉴가 모바일에서도 동작하도록 구성해야 했습니다.",
     approach:
-      "컬러값을 상수로 정의해 MUI 다크모드 설정과 매핑했습니다. 헤더와 에코시스템 드롭다운을 개발하고 react-slick 기반 슬라이더, 파트너 섹션과 모바일 반응형 레이아웃을 구성했습니다.",
+      "컬러값을 상수로 정의해 MUI 다크모드 설정과 매핑했습니다.\n헤더와 에코시스템 드롭다운을 개발하고 react-slick 기반 슬라이더, 파트너 섹션과 모바일 반응형 레이아웃을 구성했습니다.",
     result:
       "메인 페이지의 전체 섹션을 개발하고 테마별 컬러와 반응형 배치를 적용했습니다.",
     work: [
       {
         title: "테마 구성",
-        description: "MUI 라이트·다크 모드와 디자인 시스템 컬러 매핑",
+        description: "MUI 라이트 및 다크 모드와 디자인 시스템 컬러 매핑",
       },
       {
         title: "탐색과 콘텐츠",
         description:
-          "헤더·슬라이더부터 각 콘텐츠 섹션·파트너·푸터까지 전체 구현",
+          "헤더와 슬라이더부터 각 콘텐츠 섹션, 파트너, 푸터까지 전체 구현",
       },
       {
         title: "반응형 UI",
@@ -405,7 +405,7 @@ export const projects: Project[] = [
         width: 1600,
         height: 950,
         alt: "Heroball Infinity의 게임 아이템과 NFT 가챠 화면",
-        caption: "게임 아이템·NFT 가챠",
+        caption: "게임 아이템 및 NFT 가챠",
       },
       {
         src: "/projects/trala-dashboard.webp",
@@ -426,22 +426,22 @@ export const projects: Project[] = [
       "로그인과 구매부터 결과 확인까지 이어지는 게임 이벤트 웹과 데이터 운영 대시보드를 개발했습니다.",
     stack: ["Next.js", "React", "TanStack Query", "TanStack Table"],
     overview:
-      "HeroBall NFT 이벤트 웹과 게임·유저·NFT 운영 대시보드를 개발했습니다. 서비스 웹의 인증·구매 흐름과 운영 도구의 API·차트·테이블을 연결했습니다.",
-    caseTitle: "구매 요청부터 결과 화면까지 연결하기",
+      "HeroBall NFT 이벤트 웹과 게임, 유저, NFT 운영 대시보드를 개발했습니다.\n서비스 웹의 인증 및 구매 흐름과 운영 도구의 API, 차트, 테이블을 연결했습니다.",
+    caseTitle: "지갑 인증, 구매 요청과 결과 화면 처리",
     problem:
       "지갑 인증 상태와 토큰 만료, 온체인 트랜잭션 결과와 서버 구매 결과가 화면에서 일관되게 이어져야 했습니다.",
     approach:
-      "JWT 만료를 확인해 재로그인을 분기하고, 트랜잭션 영수증의 hash와 from을 확인한 뒤 서버 구매 API에 전달했습니다. 가챠 결과에 맞는 인벤토리 탭을 공통 상태로 관리했습니다.",
+      "JWT가 만료되면 다시 로그인하도록 처리하고, 트랜잭션 영수증의 hash와 from을 확인한 뒤 서버 구매 API에 전달했습니다.\n가챠 결과에 맞는 인벤토리 탭을 공통 상태로 관리했습니다.",
     result:
-      "로그인과 구매 성공·실패 UI를 구성하고 획득 결과에서 해당 인벤토리 탭으로 이어지는 흐름을 구현했습니다.",
+      "로그인과 구매의 성공 및 실패 화면을 구현했습니다.\n획득한 아이템에 맞춰 인벤토리 탭이 열리도록 처리했습니다.",
     work: [
       {
         title: "운영 데이터 연결",
-        description: "게임·유저 지표 API, ECharts 차트와 TanStack Table 연동",
+        description: "게임 및 유저 지표 API, ECharts 차트와 TanStack Table 연동",
       },
       {
         title: "CSV 업로드",
-        description: "파일 변경·취소, 업로드 데이터 미리보기와 적용 흐름 구현",
+        description: "파일 변경 및 취소, 업로드 데이터 미리보기와 적용 흐름 구현",
       },
       {
         title: "서버 페이지네이션",
@@ -456,7 +456,7 @@ export const projects: Project[] = [
     company: "크로스앵글",
     category: "company",
     period: "2022.02 - 2023.05",
-    role: "Vue · Nuxt 프론트엔드",
+    role: "Vue 및 Nuxt 프론트엔드",
     screenshots: [
       {
         src: "/projects/xangle-research.webp",
@@ -484,18 +484,18 @@ export const projects: Project[] = [
       "리서치와 인사이트, 온체인 지표를 보여주는 서비스 웹과 공통 UI를 개발했습니다.",
     stack: ["Vue 3", "Nuxt 3", "Highcharts", "Storybook"],
     overview:
-      "인사이트 캘린더·리서치 목록·온체인 차트와 공통 UI 라이브러리를 개발했습니다. Nuxt 3 환경에서 SSR과 페이지 전환 상태, 컴포넌트 호환성을 보완했습니다.",
+      "인사이트 캘린더, 리서치 목록, 온체인 차트와 공통 UI 라이브러리를 개발했습니다.\nNuxt 3 환경에서 SSR과 페이지 전환 상태, 컴포넌트 호환성을 보완했습니다.",
     caseTitle: "SSR과 목록 전환 상태 안정화",
     problem:
-      "Nuxt 환경에서는 브라우저 전용 API 접근을 구분해야 했고, 목록 전환 시 넓은 세션 초기화와 watch 실행 시점으로 로딩·무한스크롤 문제가 발생했습니다.",
+      "Nuxt 환경에서는 브라우저 전용 API 접근을 구분해야 했습니다.\n목록을 전환할 때 세션 데이터를 필요 이상으로 초기화하거나 watch 실행 시점이 맞지 않아 로딩 및 무한스크롤 문제가 발생했습니다.",
     approach:
-      "useAsyncData로 인사이트 상세 데이터를 조회하고, 리서치 관련 세션 키만 제거하도록 범위를 좁혔습니다. 필터 watch에 flush: post를 적용하고 서버의 sessionStorage 접근을 방지했습니다.",
+      "useAsyncData로 인사이트 상세 데이터를 조회하고, 리서치 관련 세션 키만 제거하도록 범위를 좁혔습니다.\n필터 watch에 flush: post를 적용하고 서버의 sessionStorage 접근을 방지했습니다.",
     result:
-      "서버 데이터 조회와 브라우저 상태의 경계를 보완하고 목록 전환의 초기화 범위를 정리했습니다. WebSocket 데이터에는 문자열 타입 가드를 추가했습니다.",
+      "서버에서 브라우저 전용 API를 호출하지 않도록 처리하고, 목록을 전환할 때 리서치 관련 세션만 초기화하도록 수정했습니다.\nWebSocket 데이터에는 문자열 타입 가드를 추가했습니다.",
     work: [
       {
         title: "콘텐츠 탐색",
-        description: "이벤트 캘린더·관련 자산·리서치 목록과 검색 상태 유지",
+        description: "이벤트 캘린더, 관련 자산, 리서치 목록과 검색 상태 유지",
       },
       {
         title: "데이터 시각화",
@@ -515,7 +515,7 @@ export const projects: Project[] = [
     company: "피타그래프",
     category: "company",
     period: "2021.08 - 2022.01",
-    role: "프론트엔드 · 백엔드",
+    role: "프론트엔드 및 백엔드",
     screenshots: [
       {
         src: "/projects/data-center-map.webp",
@@ -529,7 +529,7 @@ export const projects: Project[] = [
         width: 900,
         height: 604,
         alt: "상권 경계와 선택 상권의 통계 차트를 함께 보여주는 분석 화면",
-        caption: "시장·점포 상권 분석",
+        caption: "시장 및 점포 상권 분석",
       },
       {
         src: "/projects/data-center-export.webp",
@@ -550,14 +550,14 @@ export const projects: Project[] = [
       "공공 상권 데이터를 지도와 차트로 탐색하는 데이터 서비스를 개발했습니다.",
     stack: ["React", "Java", "PostgreSQL", "OpenLayers"],
     overview:
-      "공공 데이터를 조회하고 분석하는 웹 서비스의 프론트엔드와 Java 백엔드를 개발했습니다. 지도·차트 시각화와 다양한 형식의 데이터 내보내기를 구현했습니다.",
-    caseTitle: "데이터 조회에서 활용까지 이어지는 화면",
+      "공공 데이터를 조회하고 분석하는 웹 서비스의 프론트엔드와 Java 백엔드를 개발했습니다.\n지도 및 차트 시각화와 다양한 형식의 데이터 내보내기를 구현했습니다.",
+    caseTitle: "공공 데이터 지도, 차트 및 파일 내보내기",
     problem:
       "공공 상권 데이터를 지도와 분석 차트로 확인하고, 사용 목적에 맞는 파일 형식으로 내보낼 수 있어야 했습니다.",
     approach:
       "OpenLayers 지도와 Highcharts 분석 시각화를 구성하고 Java 백엔드에 데이터 내보내기 기능을 구현했습니다.",
     result:
-      "데이터 조회·지도 탐색·차트 확인과 XLSX·CSV·JSON·XML 형식 내보내기를 제공했습니다.",
+      "데이터 조회, 지도 탐색 및 차트 확인 기능을 제공했습니다.\nXLSX, CSV, JSON, XML 형식으로 데이터를 내보낼 수 있도록 구현했습니다.",
     work: [
       {
         title: "지도 시각화",
@@ -576,33 +576,33 @@ export const projects: Project[] = [
     title: "Daily Routine",
     company: "개인 프로젝트",
     category: "side",
-    period: "2023.06 시작 · 2026.10 UI 개편",
-    role: "UI 설계 · 프론트엔드 개발 · Supabase 연동",
+    period: "2023.06 시작, 2026.10 UI 개편",
+    role: "UI 설계, 프론트엔드 개발 및 Supabase 연동",
     screenshots: [
       {
         src: "/projects/daily-routine-tasks.webp",
         width: 1440,
         height: 1059,
-        alt: "카테고리와 상위·하위 할 일을 함께 관리하는 Daily Routine 목록",
-        caption: "할 일 목록 · 테스트 데이터",
+        alt: "상위 할 일과 하위 할 일을 카테고리별로 관리하는 Daily Routine 목록",
+        caption: "할 일 목록, 테스트 데이터",
       },
       {
         src: "/projects/daily-routine-editor.webp",
         width: 1440,
         height: 1000,
         alt: "Tiptap 도구 모음과 카테고리 선택을 제공하는 Daily Routine 작성 팝업",
-        caption: "할 일 작성 · Tiptap 편집기",
+        caption: "할 일 작성, Tiptap 편집기",
       },
       {
         src: "/projects/daily-routine-statistics.webp",
         width: 1440,
         height: 1119,
-        alt: "전체 완료율과 생성일별·카테고리별 현재 완료 상태를 보여주는 Daily Routine 통계",
-        caption: "프로필·완료 현황 · 테스트 데이터",
+        alt: "전체 완료율과 생성일별 및 카테고리별 현재 완료 상태를 보여주는 Daily Routine 통계",
+        caption: "프로필 및 완료 현황, 테스트 데이터",
       },
     ],
     description:
-      "Google 로그인부터 카테고리·하위 할 일, 서식 편집과 완료 현황까지 연결한 반응형 할 일 관리 앱입니다.",
+      "카테고리별 할 일과 하위 작업을 관리하는 반응형 웹 앱입니다.",
     stack: [
       "React",
       "TypeScript",
@@ -612,29 +612,29 @@ export const projects: Project[] = [
       "Tiptap",
     ],
     overview:
-      "업무·공부·일상을 카테고리로 나누고 상위·하위 할 일을 관리하는 웹 앱입니다. Google OAuth와 신규 회원 프로필 등록, 드래그 정렬, Tiptap 서식 편집, 완료 현황을 구현했습니다. 데스크톱 중앙 편집 팝업과 모바일 전체 화면 편집에서 미저장 내용 보호와 저장 실패 시 입력 보존을 적용했습니다.",
-    caseTitle: "중복 저장과 늦게 도착한 조회 응답으로부터 화면 지키기",
+      "업무, 공부, 일상을 카테고리로 나누고 상위 및 하위 할 일을 관리하는 웹 앱입니다.\nGoogle OAuth와 신규 회원 프로필 등록, 드래그 정렬, Tiptap 서식 편집, 완료 현황을 구현했습니다.\n데스크톱 중앙 편집 팝업과 모바일 전체 화면 편집에서 미저장 내용 보호와 저장 실패 시 입력 보존을 적용했습니다.",
+    caseTitle: "중복 저장과 오래된 조회 응답 처리",
     problem:
-      "같은 렌더 안에서 저장을 연속 호출하면 React 상태가 바뀌기 전에 중복 쓰기가 실행될 수 있었습니다. 이전 조회가 늦게 도착하면 최신 목록을 덮어쓰고, 여러 REST 요청 중 일부만 실패하면 화면과 저장된 데이터가 달라질 수 있었습니다.",
+      "같은 렌더 안에서 저장을 연속 호출하면 React 상태가 바뀌기 전에 중복 쓰기가 실행될 수 있었습니다.\n이전 조회가 늦게 도착하면 최신 목록을 덮어쓰고, 여러 REST 요청 중 일부만 실패하면 화면과 저장된 데이터가 달라질 수 있었습니다.",
     approach:
-      "useRef 잠금으로 중복 쓰기를 막고 요청 번호와 마운트 상태로 최신 조회 응답만 반영했습니다. 여러 쓰기는 모두 끝난 뒤 오류를 전달하도록 처리하고, 실패 시 실제 저장 상태를 재조회했습니다. 편집기에서는 실패해도 입력을 보존하고 재시도할 수 있도록 구성했습니다.",
+      "useRef 잠금으로 중복 쓰기를 막고 요청 번호와 마운트 상태로 최신 조회 응답만 반영했습니다.\n여러 저장 요청이 모두 끝난 뒤 오류를 전달하고, 실패한 경우 실제 저장 상태를 다시 조회했습니다.\n편집기에서는 실패해도 입력을 보존하고 재시도할 수 있도록 구성했습니다.",
     result:
-      "중복 쓰기·조회 순서 역전·부분 저장 실패를 재현하는 회귀 테스트를 추가했습니다. 로컬 Supabase 모의 서버를 이용한 브라우저 테스트로 CRUD, 가입, 모바일 편집과 미저장 보호를 검증했습니다.",
+      "중복 쓰기, 조회 순서 역전, 부분 저장 실패를 재현하는 회귀 테스트를 추가했습니다.\n로컬 Supabase 모의 서버를 이용한 브라우저 테스트로 CRUD, 가입, 모바일 편집과 미저장 보호를 검증했습니다.",
     work: [
       {
         title: "할 일과 인증",
         description:
-          "Google OAuth(PKCE)·회원가입, 카테고리와 상위·하위 할 일 CRUD·완료 연동·정렬",
+          "Google OAuth(PKCE) 및 회원가입\n카테고리, 상위 및 하위 할 일 CRUD와 완료 연동, 정렬",
       },
       {
         title: "서식 편집과 모바일",
         description:
-          "Tiptap·DOMPurify 기반 HTML 편집, 이미지·표, 모바일 전체 화면과 미저장 변경 보호",
+          "Tiptap 및 DOMPurify 기반 HTML 편집, 이미지와 표\n모바일 전체 화면과 미저장 변경 보호",
       },
       {
         title: "데이터와 통계",
         description:
-          "페이지 단위 전체 조회와 Map 기반 그룹화, 생성일별·카테고리별 현재 완료 현황",
+          "페이지 단위 전체 조회와 Map 기반 그룹화\n생성일별 및 카테고리별 현재 완료 현황",
       },
     ],
   },
@@ -644,7 +644,7 @@ export const projects: Project[] = [
     company: "1인 개발",
     category: "side",
     period: "2024.10 - 2024.12 / 이후 유지보수",
-    role: "기획 · 디자인 · 개발 · 배포",
+    role: "기획, 디자인, 개발 및 배포",
     website: "https://readly.createdoodle.dev/",
     screenshots: [
       {
@@ -652,29 +652,29 @@ export const projects: Project[] = [
         width: 2880,
         height: 2160,
         alt: "서비스 소개와 다른 독자의 독서 기록을 그리드로 보여주는 Readly 메인 화면",
-        caption: "메인 · 함께 읽는 독서 기록",
+        caption: "메인, 함께 읽는 독서 기록",
       },
       {
         src: "/projects/readly-editor.webp",
         width: 1910,
         height: 1360,
         alt: "도서 검색과 카테고리 선택, 서식 편집기를 연결한 Readly 기록 작성 화면",
-        caption: "독서 기록 작성 · 도서 검색과 서식 편집",
+        caption: "독서 기록 작성, 도서 검색과 서식 편집",
       },
       {
         src: "/projects/readly-profile.webp",
         width: 1848,
         height: 1378,
         alt: "기록한 책과 작성한 글을 도서별로 모아 검색하는 Readly 마이페이지",
-        caption: "마이페이지 · 도서별 기록 관리",
+        caption: "마이페이지, 도서별 기록 관리",
       },
     ],
     description:
-      "읽은 책의 문장과 생각을 기록하고, 같은 책을 읽은 사람들과 나누는 독서 기록 서비스입니다. 도서 검색부터 기록 작성·탐색·내 기록 관리까지 연결하고, 기획부터 API·DB·배포까지 직접 만들었습니다.",
+      "읽은 책의 문장과 생각을 기록하고, 같은 책을 읽은 사람들과 나누는 독서 기록 서비스입니다.\n도서 검색부터 기록 작성, 탐색, 내 기록 관리까지 연결하고, 기획부터 API 및 DB 개발, 배포까지 직접 맡았습니다.",
     stack: ["Next.js", "Node.js", "PostgreSQL"],
     overview:
-      "도서를 검색해 인상 깊은 문장과 감상을 남기고, 다른 독자의 기록을 탐색하는 반응형 웹 서비스입니다. Google 로그인, Tiptap 서식 편집, 기록 검색·필터·정렬과 좋아요·댓글을 구현하고, 마이페이지에서 책별로 내 기록을 모아볼 수 있도록 구성했습니다. 화면·API·데이터베이스·배포를 직접 맡았으며, 배포 이후 데이터 집계 오류와 API 장애를 해결하며 유지보수했습니다.",
-    caseTitle: "만드는 경험에서 운영하는 경험으로",
+      "도서를 검색해 인상 깊은 문장과 감상을 남기고, 다른 독자의 기록을 탐색하는 반응형 웹 서비스입니다.\nGoogle 로그인, Tiptap 서식 편집, 기록 검색, 필터, 정렬과 좋아요 및 댓글을 구현했습니다.\n마이페이지에서는 책별로 내 기록을 모아볼 수 있도록 구성했습니다.\n화면, API, 데이터베이스, 배포를 직접 맡았으며, 배포 이후 데이터 집계 오류와 API 장애를 해결하며 유지보수했습니다.",
+    caseTitle: "배포 후 중복 집계 오류와 API 장애 수정",
     problem:
       "서비스를 배포한 뒤 데이터 중복 집계와 프로덕션 API 장애를 해결해야 했습니다.",
     approach:
@@ -684,12 +684,12 @@ export const projects: Project[] = [
       {
         title: "서비스 기획",
         description:
-          "도서 검색·기록 작성·다른 독자의 기록 탐색·마이페이지로 이어지는 사용자 흐름 설계",
+          "도서 검색, 기록 작성, 다른 독자의 기록 탐색, 마이페이지로 이어지는 사용자 흐름 설계",
       },
       {
         title: "전체 개발",
         description:
-          "Next.js 반응형 화면과 Tiptap 편집기, Node.js API·PostgreSQL 데이터베이스 개발",
+          "Next.js 반응형 화면과 Tiptap 편집기, Node.js API와 PostgreSQL 데이터베이스 개발",
       },
       {
         title: "운영과 유지보수",
@@ -703,18 +703,15 @@ export const projects: Project[] = [
     company: "2인 팀",
     category: "side",
     period: "2026.07 - 2026.08",
-    role: "게임 전투 · 진행 · 비주얼 개발",
+    role: "게임 전투, 진행 및 비주얼 개발",
     description:
       "전투와 스테이지 진행, 비주얼을 구현한 Phaser 기반 2D 액션 게임입니다.",
     stack: ["Phaser 4", "React", "TypeScript"],
     overview:
-      "2인 팀으로 제작한 2D 액션 게임입니다. Phaser를 기반으로 전투·진행·비주얼을 구현하고, 자동화 테스트와 실제 플레이로 동작을 확인했습니다.",
-    caseTitle: "전투와 스테이지 진행을 플레이로 검증하기",
-    problem:
-      "무기별 전투와 여러 스테이지의 진행 흐름이 실제 플레이에서 자연스럽게 이어져야 했습니다.",
-    approach:
-      "무기와 스테이지를 구성하고 자동화 테스트와 실제 플레이를 함께 진행했습니다.",
-    result: "5개 스테이지와 무기 4종을 구현하고 전투·진행 흐름을 확인했습니다.",
+      "2인 팀으로 제작한 2D 액션 게임입니다.\nPhaser를 기반으로 전투, 진행, 비주얼을 구현하고, 자동화 테스트와 실제 플레이로 동작을 확인했습니다.",
+    caseTitle: "무기별 전투와 스테이지 진행 테스트",
+    result:
+      "무기 4종과 5개 스테이지의 전투 및 진행 기능을 구현하고, 자동화 테스트와 실제 플레이로 동작을 확인했습니다.",
     work: [
       { title: "전투", description: "무기 4종을 활용한 2D 액션 전투" },
       { title: "진행", description: "5개 스테이지의 게임 진행 구성" },

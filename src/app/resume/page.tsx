@@ -20,11 +20,12 @@ export default function ResumePage() {
     <main id="main-content" className="page-container">
       <section className="flex flex-col items-start justify-between gap-7 border-b py-12 md:flex-row md:items-end md:py-16">
         <div>
-          <Eyebrow>이력 · Resume</Eyebrow>
+          <Eyebrow>이력, Resume</Eyebrow>
           <h1 className="page-title">경력과 역할을 한눈에.</h1>
           <p className="mt-5 text-base leading-[1.85] text-muted-foreground md:text-lg">
             웹 서비스와 운영 어드민에서 시작해,
-            <br className="hidden sm:block" /> 실시간 설비 GUI와 공통 렌더링
+            <br />
+            실시간 설비 GUI와 공통 렌더링
             엔진으로 경험을 넓혔습니다.
           </p>
         </div>
@@ -75,7 +76,7 @@ export default function ResumePage() {
             {[
               ["experience", "경력"],
               ["skills", "기술"],
-              ["education", "학력·자격"],
+              ["education", "학력 및 자격"],
             ].map(([id, label]) => (
               <a
                 key={id}
@@ -118,12 +119,12 @@ export default function ResumePage() {
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground">
                   {experience.role}
-                  {experience.team && ` · ${experience.team}`}
+                  {experience.team && `, ${experience.team}`}
                 </p>
                 <p className="mt-5 text-base font-semibold leading-relaxed">
                   {experience.summary}
                 </p>
-                <ul className="mt-3 space-y-2 pl-4 text-[15px] leading-[1.85] text-muted-foreground marker:text-muted-foreground/60 list-disc">
+                <ul className="mt-3 space-y-2 whitespace-pre-line pl-4 text-[15px] leading-[1.85] text-muted-foreground marker:text-muted-foreground/60 list-disc">
                   {experience.tasks.map((task) => (
                     <li key={task}>{task}</li>
                   ))}
@@ -166,7 +167,7 @@ export default function ResumePage() {
             className="mt-12 border-t pt-10 pb-8 md:mt-16 md:pb-14"
           >
             <h2 id="education-heading" className="section-title">
-              학력·자격
+              학력 및 자격
             </h2>
             <div className="mt-7 space-y-7">
               <div className="flex flex-col justify-between gap-2 sm:flex-row">

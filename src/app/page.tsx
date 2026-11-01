@@ -25,7 +25,7 @@ export default function Home() {
       >
         <div>
           <Eyebrow>
-            {profile.name} · {profile.role}
+            {profile.name}, {profile.role}
           </Eyebrow>
           <h1
             id="intro-heading"
@@ -36,9 +36,9 @@ export default function Home() {
             운영 시스템을 개발합니다.
           </h1>
           <p className="mt-7 max-w-[630px] text-base leading-[1.8] text-muted-foreground md:mt-8 md:text-lg">
-            React · Next.js 웹 서비스부터 Vue 실시간 운영 GUI까지,
-            <br className="hidden xl:block" /> 화면과 데이터, 실제 운영 환경을
-            연결해 왔습니다.
+            React와 Next.js 웹 서비스부터 Vue 실시간 운영 GUI까지,
+            <br />
+            서비스 화면과 API 연동, 실시간 설비 맵을 개발해 왔습니다.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button
@@ -79,9 +79,9 @@ export default function Home() {
             </div>
             <div className="grid gap-7 md:grid-cols-3 lg:grid-cols-1">
               {[
-                ["웹 서비스", "React · Next.js · TypeScript"],
-                ["실시간 운영", "Vue · PixiJS · WebSocket"],
-                ["API와 데이터", "Node.js · PostgreSQL · Redis"],
+                ["웹 서비스", "React, Next.js, TypeScript"],
+                ["실시간 운영", "Vue, PixiJS, WebSocket"],
+                ["API와 데이터", "Node.js, PostgreSQL, Redis"],
               ].map(([name, stack], i) => (
                 <div
                   key={name}
@@ -105,12 +105,8 @@ export default function Home() {
       <section className="pt-14 md:pt-16" aria-labelledby="explore-heading">
         <Eyebrow>경력과 작업</Eyebrow>
         <h2 id="explore-heading" className="section-title">
-          필요한 방식으로 살펴보세요.
+          경력과 프로젝트
         </h2>
-        <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-          이력은 역할과 경력의 흐름을, 포트폴리오는 작업 과정과 해결한 문제를
-          보여줍니다.
-        </p>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {[
             {
@@ -125,7 +121,7 @@ export default function Home() {
               title: "포트폴리오",
               count: `${projects.length}개 프로젝트`,
               subtitle: "어떤 문제를, 어떻게 풀었는지",
-              description: `회사 프로젝트 ${projects.filter((project) => project.category === "company").length}개 · 사이드 프로젝트 ${projects.filter((project) => project.category === "side").length}개`,
+              description: `회사 프로젝트 ${projects.filter((project) => project.category === "company").length}개, 사이드 프로젝트 ${projects.filter((project) => project.category === "side").length}개`,
               href: "/portfolio",
               cta: "포트폴리오 전체 보기",
             },

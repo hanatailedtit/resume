@@ -61,7 +61,7 @@ export function ZoneEditorArchitecture() {
         {/* Vertical Transition Indicator */}
         <div className="flex items-center justify-center gap-2 py-1 text-xs font-medium text-muted-foreground">
           <ArrowDown size={16} className="text-primary" aria-hidden="true" />
-          <span>렌더러 상태 복원 및 신규 생성 생명주기</span>
+          <span>설정 복원 후 새 존을 추가하는 과정</span>
         </div>
 
         {/* 3-Step Lifecycle Grid in Renderer */}
@@ -78,7 +78,7 @@ export function ZoneEditorArchitecture() {
               <p className="mt-3 text-sm font-bold">설정 데이터 복원</p>
               <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                 Import JSON 및 Redis ReadDB를 통해 존 배치 및
-                EquipmentConfig·GroupPort 매핑 로드
+                EquipmentConfig 및 GroupPort 매핑 로드
               </p>
             </div>
           </div>
@@ -88,7 +88,7 @@ export function ZoneEditorArchitecture() {
             <div>
               <div className="flex items-center justify-between">
                 <span className="rounded-md bg-primary/10 px-2 py-0.5 text-[11px] font-semibold text-brand-strong">
-                  Step 02 · 핵심 해결
+                  Step 02, 핵심 해결
                 </span>
                 <TreeStructure size={20} className="text-primary" />
               </div>
@@ -138,7 +138,7 @@ export function HeroballArchitecture() {
   const steps = [
     {
       num: "01",
-      title: "인증 & 만료 가드",
+      title: "로그인 및 토큰 만료 확인",
       badge: "Web3 Provider",
       icon: Wallet,
       desc: "ConnectWallet 연결 및 judgeExpiredAccessToken을 통한 JWT 만료 감지 시 재로그인 분기",
@@ -154,7 +154,7 @@ export function HeroballArchitecture() {
     },
     {
       num: "03",
-      title: "서버 검증 & 승인",
+      title: "서버 검증 및 구매 처리",
       badge: "REST API",
       icon: ShieldCheck,
       desc: "/box/purchase API로 영수증 검증 후 중복 구매 방지 및 아이템 소유권 반영",
@@ -173,7 +173,7 @@ export function HeroballArchitecture() {
   return (
     <figure className="my-8 overflow-hidden rounded-2xl border bg-subtle p-6 md:p-9">
       <figcaption className="mb-7 text-sm font-semibold text-muted-foreground">
-        지갑 인증부터 인벤토리 반영까지의 트랜잭션 파이프라인
+        지갑 인증, 구매 요청, 인벤토리 반영 순서
       </figcaption>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {steps.map((step, idx) => {
@@ -256,7 +256,7 @@ export function XangleArchitecture() {
   return (
     <figure className="my-8 overflow-hidden rounded-2xl border bg-subtle p-6 md:p-9">
       <figcaption className="mb-7 text-sm font-semibold text-muted-foreground">
-        Nuxt 3 SSR 렌더링 경계와 세션 스코프 격리 구조
+        Nuxt 3의 서버 처리와 브라우저 세션 관리
       </figcaption>
       <div className="space-y-4">
         {/* Tier 1: Server Environment */}
@@ -274,7 +274,7 @@ export function XangleArchitecture() {
           </div>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div>
-              <p className="text-xs font-semibold">useAsyncData 사전 패치</p>
+              <p className="text-xs font-semibold">useAsyncData로 서버에서 데이터 조회</p>
               <p className="mt-1 text-xs text-muted-foreground">
                 인사이트 상세 데이터를 서버에서 미리 로드하여 초기 화면 깜빡임
                 제거 및 검색엔진 메타태그 완성
@@ -288,7 +288,7 @@ export function XangleArchitecture() {
                 <code className="rounded bg-subtle px-1 py-0.5 text-[11px]">
                   if (process.server) return
                 </code>{" "}
-                가드로 Node.js 환경에서 sessionStorage 접근 크래시 방지
+                조건으로 Node.js 환경의 sessionStorage 접근 오류 방지
               </p>
             </div>
           </div>
@@ -328,7 +328,7 @@ export function XangleArchitecture() {
               <code className="rounded bg-background/60 px-1 py-0.5 text-[11px]">
                 researchScroll
               </code>{" "}
-              등)만 선별 제거하여 타 기능 세션 오염 방지
+              등)만 삭제해 다른 기능의 세션 유지
             </p>
           </div>
 
@@ -340,7 +340,7 @@ export function XangleArchitecture() {
               </span>
               <ArrowsClockwise size={20} className="text-primary" />
             </div>
-            <h4 className="mt-3 text-sm font-bold">반응형 렌더링 &amp; 수신 가드</h4>
+            <h4 className="mt-3 text-sm font-bold">렌더링 시점과 수신 데이터 타입 확인</h4>
             <div className="mt-2 space-y-2 text-xs leading-relaxed text-muted-foreground">
               <p>
                 <strong className="text-foreground">
@@ -378,7 +378,7 @@ export function DataCenterArchitecture() {
   return (
     <figure className="my-8 overflow-hidden rounded-2xl border bg-subtle p-6 md:p-9">
       <figcaption className="mb-7 text-sm font-semibold text-muted-foreground">
-        공공 상권 데이터 이원화 시각화와 다형성 내보내기 파이프라인
+        상권 데이터를 지도와 차트로 표시하고 파일로 내보내는 구조
       </figcaption>
       <div className="space-y-4">
         {/* Source Layer */}
@@ -392,7 +392,7 @@ export function DataCenterArchitecture() {
                 데이터 소스 (PostgreSQL)
               </p>
               <p className="text-sm font-semibold">
-                동대문구 상권 공간 레이어 &amp; 분기별 매출·유동인구 데이터셋
+                동대문구 상권 공간 레이어 &amp; 분기별 매출 및 유동인구 데이터셋
               </p>
             </div>
           </div>
@@ -475,13 +475,13 @@ export function DataCenterArchitecture() {
 
 /**
  * 5. Readly
- * 계층별 무결성 검증(Client -> Node.js 멱등성 가드 & 장애 복구 -> PostgreSQL) 구조
+ * 화면, API, 데이터 저장과 운영 중 수정한 문제
  */
 export function ReadlyArchitecture() {
   return (
     <figure className="my-8 overflow-hidden rounded-2xl border bg-subtle p-6 md:p-9">
       <figcaption className="mb-7 text-sm font-semibold text-muted-foreground">
-        계층별 데이터 무결성과 운영 장애 복구 파이프라인
+        Readly의 화면, API, 데이터베이스 구조
       </figcaption>
       <div className="space-y-3">
         {/* Layer 1: Client UI */}
@@ -490,7 +490,7 @@ export function ReadlyArchitecture() {
             <div className="flex items-center gap-2">
               <BookOpen size={18} className="text-primary" />
               <h4 className="text-sm font-bold">
-                1. 프론트엔드 입력 및 서재 인터랙션 (Next.js)
+                1. 도서 검색과 독서 기록 화면 (Next.js)
               </h4>
             </div>
             <span className="rounded bg-subtle px-2 py-0.5 text-[11px] font-semibold text-muted-foreground">
@@ -498,8 +498,7 @@ export function ReadlyArchitecture() {
             </span>
           </div>
           <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-            도서 검색·독서 상태(읽는 중, 완독) 입력 폼 제공, 카테고리별 개인 서재
-            분류, 빠른 연속 입력 시 프론트 디바운스 적용
+            도서 검색과 독서 기록 작성, 책별 기록 조회 화면 구현
           </p>
         </div>
 
@@ -514,26 +513,24 @@ export function ReadlyArchitecture() {
             <div className="flex items-center gap-2">
               <ShieldCheck size={22} className="text-primary" />
               <h4 className="text-base font-bold text-brand-strong">
-                2. 중복 집계 방지 가드 및 무중단 장애 복구 (Node.js API)
+                2. API 개발 및 운영 중 오류 수정 (Node.js)
               </h4>
             </div>
             <span className="rounded bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-brand-strong">
-              운영 핵심 해결
+              운영 중 수정
             </span>
           </div>
           <div className="mt-3 grid gap-3 sm:grid-cols-2 text-xs text-brand-strong">
             <div className="rounded-lg bg-background/60 p-3">
-              <p className="font-bold">중복 집계 원천 차단 가드</p>
+              <p className="font-bold">중복 집계 오류 수정</p>
               <p className="mt-1 opacity-90">
-                동일 사용자의 중복 클릭 및 네트워크 재시도에 대해 멱등성 검증을
-                거쳐 이중 카운팅 방지
+                데이터 중복 집계를 수정했습니다.
               </p>
             </div>
             <div className="rounded-lg bg-background/60 p-3">
-              <p className="font-bold">무중단 프로덕션 장애 복구</p>
+              <p className="font-bold">API 장애 수정</p>
               <p className="mt-1 opacity-90">
-                외부 도서 API 연동 실패 및 런타임 예외를 격리하고 안전한 폴백
-                응답을 반환하여 서비스 연속성 보장
+                배포 후 발생한 API 장애를 수정했습니다.
               </p>
             </div>
           </div>
@@ -550,34 +547,16 @@ export function ReadlyArchitecture() {
             <div className="flex items-center gap-2">
               <Database size={18} className="text-primary" />
               <h4 className="text-sm font-bold">
-                3. 데이터 영속성 및 통계 집계 (PostgreSQL)
+                3. 데이터 저장 (PostgreSQL)
               </h4>
             </div>
             <span className="rounded bg-subtle px-2 py-0.5 text-[11px] font-semibold text-muted-foreground">
-              Persistence &amp; Stats
+              Database
             </span>
           </div>
-          <div className="mt-3 grid gap-3 sm:grid-cols-2 text-xs text-muted-foreground">
-            <div>
-              <p className="font-semibold text-foreground">유니크 제약 스키마</p>
-              <p className="mt-1">
-                복합 고유 제약(
-                <code className="rounded bg-subtle px-1 py-0.5 text-[11px]">
-                  UNIQUE
-                </code>
-                )과 트랜잭션 롤백으로 데이터 원자성 보장
-              </p>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground">
-                월별 독서량 통계 롤업
-              </p>
-              <p className="mt-1">
-                정제된 단일 기록만을 기준으로 월별 권수·페이지 수를 정확하게 1회
-                집계
-              </p>
-            </div>
-          </div>
+          <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+            도서와 독서 기록 데이터 저장
+          </p>
         </div>
       </div>
     </figure>
@@ -600,7 +579,7 @@ export function AshErrorArchitecture() {
   return (
     <figure className="my-8 overflow-hidden rounded-2xl border bg-subtle p-6 md:p-9">
       <figcaption className="mb-7 text-sm font-semibold text-muted-foreground">
-        2D 아케이드 게임 루프와 스테이지 진행·검증 구조
+        2D 아케이드 게임 루프와 스테이지 진행 및 검증 구조
       </figcaption>
       <div className="space-y-4">
         {/* Dual Engine: React Controller vs Phaser 4 Game Loop */}
@@ -616,12 +595,12 @@ export function AshErrorArchitecture() {
               </div>
               <h4 className="mt-3 text-sm font-bold">React Controller &amp; HUD</h4>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                키보드·가상패드 입력 수집, 4종 무기 스왑 UI 및 무기별 쿨다운
-                타이머 관리, 실시간 체력·스코어 표시
+                키보드 및 가상패드 입력 수집, 4종 무기 스왑 UI 및 무기별 쿨다운
+                타이머 관리, 실시간 체력 및 스코어 표시
               </p>
             </div>
             <div className="mt-4 rounded-lg bg-subtle p-2.5 text-center text-xs font-semibold text-muted-foreground">
-              무기 4종: 권총 · 샷건 · 라이플 · 플라즈마
+              무기 4종: 권총, 샷건, 라이플, 플라즈마
             </div>
           </div>
 
@@ -705,7 +684,7 @@ export function AshErrorArchitecture() {
             </div>
           </div>
           <p className="text-xs text-muted-foreground sm:text-right">
-            단위/충돌 판정 코드 검증 ↔ 조작감·난이도 플레이 피드백 밸런싱
+            단위 테스트와 충돌 판정 검증, 플레이 피드백을 반영한 조작감과 난이도 조정
           </p>
         </div>
       </div>
@@ -731,8 +710,8 @@ export function ProjectArchitecture({ slug }: { slug: string }) {
           <div className="grid items-center gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
             {[
               ["디자인 토큰", "디자인 시스템 컬러 상수"],
-              ["Material UI 테마", "라이트·다크 모드 컬러 매핑"],
-              ["React 컴포넌트", "헤더·슬라이더·파트너·반응형 화면"],
+              ["Material UI 테마", "라이트 및 다크 모드 컬러 매핑"],
+              ["React 컴포넌트", "헤더, 슬라이더, 파트너, 반응형 화면"],
             ].map(([title, description], index) => (
               <div key={title} className="contents">
                 {index > 0 && (
@@ -770,13 +749,13 @@ export function ProjectArchitecture({ slug }: { slug: string }) {
       return (
         <figure className="my-8 rounded-2xl border bg-subtle p-6 md:p-9">
           <figcaption className="mb-6 text-sm font-semibold text-muted-foreground">
-            편집 내용 보존과 저장·조회 상태 동기화
+            편집 내용 보존과 저장 및 조회 상태 동기화
           </figcaption>
           <div className="grid items-center gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr]">
             {[
-              ["할 일 편집", "Tiptap 입력 보존 · HTML 정제"],
-              ["useWorkspace", "ref 쓰기 잠금 · 최신 요청 번호 확인"],
-              ["Supabase REST", "저장 후 재조회 · 부분 실패 시 상태 복구"],
+              ["할 일 편집", "Tiptap 입력 보존 및 HTML 정제"],
+              ["useWorkspace", "ref 쓰기 잠금 및 최신 요청 번호 확인"],
+              ["Supabase REST", "저장 후 재조회 및 부분 실패 시 상태 복구"],
             ].map(([title, description], index) => (
               <div key={title} className="contents">
                 {index > 0 && (

@@ -39,9 +39,11 @@ export function MapArchitecture() {
           </p>
           <p className="mt-2 text-xl font-bold">PixiJS Engine</p>
           <p className="mt-3 text-sm leading-relaxed text-brand-strong">
-            텍스처 캐시
+            화면 범위 및 배율별 라벨 표시
             <br />
-            스프라이트 Map 인덱스
+            라벨 및 스프라이트 Map 인덱스
+            <br />
+            텍스처 재사용
           </p>
         </div>
         <ArrowRight
@@ -59,7 +61,7 @@ export function MapArchitecture() {
             <MapTrifold size={20} className="mb-2 text-primary" />
             <p className="font-semibold">ViewportManager</p>
             <p className="mt-1 text-sm text-muted-foreground">
-              확대·축소와 시점 이동
+              시점 이동, 확대 및 축소
             </p>
           </div>
           <div className="rounded-xl border bg-background p-5">

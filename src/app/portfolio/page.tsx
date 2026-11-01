@@ -16,11 +16,12 @@ export default function PortfolioPage() {
     <main id="main-content" className="page-container">
       <section className="flex flex-col items-start justify-between gap-7 pt-12 pb-10 md:flex-row md:items-end md:pt-16 md:pb-12">
         <div>
-          <Eyebrow>포트폴리오 · Selected work</Eyebrow>
+          <Eyebrow>포트폴리오, Selected work</Eyebrow>
           <h1 className="page-title">만든 것과 해결한 문제들.</h1>
           <p className="mt-5 text-base leading-[1.85] text-muted-foreground md:text-lg">
             서비스와 운영 도구를 개발하며 맡았던 역할과,
-            <br className="hidden sm:block" /> 문제를 해결하고 검증한 과정을
+            <br />
+            문제를 해결하고 검증한 과정을
             기록했습니다.
           </p>
         </div>
@@ -40,7 +41,7 @@ export default function PortfolioPage() {
       <section className="my-16 flex flex-col items-start justify-between gap-5 rounded-2xl bg-brand-subtle p-7 md:my-20 md:flex-row md:items-center md:p-9">
         <div>
           <h2 className="text-xl font-bold tracking-tight">
-            프로젝트가 경력 안에서 어떻게 이어졌는지 궁금하다면
+            회사별 담당 업무 보기
           </h2>
           <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
             회사별 역할과 주요 업무를 이력에서 볼 수 있습니다.

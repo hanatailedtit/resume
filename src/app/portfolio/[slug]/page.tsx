@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = projects.find((project) => project.slug === slug);
   return {
     title: project?.title ?? "프로젝트를 찾을 수 없습니다",
-    description: project?.description,
+    description: project?.description.replaceAll("\n", " "),
   };
 }
 
@@ -60,11 +60,11 @@ export default async function ProjectPage({ params }: Props) {
       </div>
       <section className="border-b pt-8 pb-10 md:pt-10 md:pb-12">
         <Eyebrow>
-          {project.category === "company" ? "회사 프로젝트" : "사이드 프로젝트"}{" "}
-          · {project.company}
+          {project.category === "company" ? "회사 프로젝트" : "사이드 프로젝트"},{" "}
+          {project.company}
         </Eyebrow>
         <h1 className="page-title">{project.title}</h1>
-        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+        <p className="mt-5 max-w-3xl whitespace-pre-line text-lg leading-relaxed text-muted-foreground">
           {project.description}
         </p>
         {project.website && (
@@ -91,7 +91,9 @@ export default async function ProjectPage({ params }: Props) {
             <dt className="text-xs font-semibold text-muted-foreground">
               내 역할
             </dt>
-            <dd className="mt-2 text-sm leading-relaxed">{project.role}</dd>
+            <dd className="mt-2 whitespace-pre-line text-sm leading-relaxed">
+              {project.role}
+            </dd>
           </div>
           <div>
             <dt className="mb-2 text-xs font-semibold text-muted-foreground">
@@ -122,7 +124,7 @@ export default async function ProjectPage({ params }: Props) {
             <div className="mt-7 grid gap-6 md:grid-cols-2">
               {group.images.map((screenshot, index) => {
                 const comparison =
-                  group.title === "라이트·다크 모드 비교" ||
+                  group.title === "라이트 및 다크 모드 비교" ||
                   group.title === "모바일 반응형";
                 const wide = index === 0 || comparison;
                 return (
@@ -194,29 +196,35 @@ export default async function ProjectPage({ params }: Props) {
           className="mt-12 border-t pt-10 md:mt-14 md:pt-12"
           aria-labelledby="case-heading"
         >
-          <Eyebrow>대표 문제 해결</Eyebrow>
+          <Eyebrow>{project.problem ? "대표 문제 해결" : "구현과 검증"}</Eyebrow>
           <h2
             id="case-heading"
             className="text-[25px] leading-snug font-bold tracking-tight md:text-[30px]"
           >
             {project.caseTitle}
           </h2>
-          <div className="mt-8 space-y-8">
-            <div>
-              <h3 className="mb-3 text-base font-bold">문제</h3>
-              <p className="prose-copy">{project.problem}</p>
+          {(project.problem || project.approach) && (
+            <div className="mt-8 space-y-8">
+              {project.problem && (
+                <div>
+                  <h3 className="mb-3 text-base font-bold">문제</h3>
+                  <p className="prose-copy">{project.problem}</p>
+                </div>
+              )}
+              {project.approach && (
+                <div>
+                  <h3 className="mb-3 text-base font-bold">접근과 구현</h3>
+                  <p className="prose-copy">{project.approach}</p>
+                </div>
+              )}
             </div>
-            <div>
-              <h3 className="mb-3 text-base font-bold">접근과 구현</h3>
-              <p className="prose-copy">{project.approach}</p>
-            </div>
-          </div>
+          )}
           <ProjectArchitecture slug={project.slug} />
           <div className="mt-8 rounded-xl border border-primary/20 bg-brand-subtle p-6 md:p-7">
             <h3 className="mb-3 text-base font-bold text-brand-strong">
               결과와 검증
             </h3>
-            <p className="text-[15px] leading-[1.9] text-brand-strong">
+            <p className="whitespace-pre-line text-[15px] leading-[1.9] text-brand-strong">
               {project.result}
             </p>
           </div>
@@ -235,7 +243,7 @@ export default async function ProjectPage({ params }: Props) {
                 className="border-l-2 border-primary/20 pl-5"
               >
                 <h3 className="text-base font-bold">{work.title}</h3>
-                <p className="mt-3 text-sm leading-[1.9] text-muted-foreground">
+                <p className="mt-3 whitespace-pre-line text-sm leading-[1.9] text-muted-foreground">
                   {work.description}
                 </p>
               </div>
@@ -249,9 +257,9 @@ export default async function ProjectPage({ params }: Props) {
                 이 작업을 맡았던 경력
               </p>
               <h2 className="mt-2 text-lg font-bold">
-                {experience.company}{" "}
-                <span className="text-sm font-normal text-muted-foreground">
-                  · {experience.role}
+                {experience.company}
+                <span className="mt-1 block text-sm font-normal text-muted-foreground">
+                  {experience.role}
                 </span>
               </h2>
             </div>

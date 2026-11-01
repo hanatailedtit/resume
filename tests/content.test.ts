@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import { ProjectArchitecture } from "../src/components/project-architectures";
 import { experiences, featuredProjects, projects } from "../src/lib/content";
 
-test("every project has a unique route and complete case study", () => {
+test("every project has a unique route, summary and result, with complete optional case details", () => {
   assert.equal(
     new Set(projects.map((project) => project.slug)).size,
     projects.length,
@@ -14,11 +14,13 @@ test("every project has a unique route and complete case study", () => {
     for (const field of [
       "title",
       "overview",
-      "problem",
-      "approach",
       "result",
     ] as const) {
       assert.ok(project[field].trim(), `${project.slug}: missing ${field}`);
+    }
+    if (project.problem !== undefined || project.approach !== undefined) {
+      assert.ok(project.problem?.trim(), `${project.slug}: missing problem`);
+      assert.ok(project.approach?.trim(), `${project.slug}: missing approach`);
     }
     assert.ok(project.work.length > 0);
     if (project.experience)
@@ -91,7 +93,7 @@ test("Pomerium shows full-page ownership, section captures, theme comparisons an
     images.filter((image) => image.group === "데스크톱 섹션별 화면").length,
     11,
   );
-  for (const group of ["라이트·다크 모드 비교", "모바일 반응형"]) {
+  for (const group of ["라이트 및 다크 모드 비교", "모바일 반응형"]) {
     const comparisons = images.filter((image) => image.group === group);
     assert.equal(comparisons.length, 2);
     for (const image of comparisons)

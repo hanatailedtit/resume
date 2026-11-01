@@ -93,7 +93,7 @@ export function ProjectCard({
             variant={project.category === "company" ? "default" : "secondary"}
             className="rounded-full border-0 bg-brand-subtle px-2.5 py-1 text-xs font-semibold text-brand-strong"
           >
-            {project.category === "company" ? "회사" : "사이드"} ·{" "}
+            {project.category === "company" ? "회사" : "사이드"},{" "}
             {project.company}
           </Badge>
         </div>
@@ -116,7 +116,7 @@ export function ProjectCard({
             {project.period}
           </p>
         )}
-        <p className="mt-4 mb-7 text-[15px] leading-[1.85] text-muted-foreground">
+        <p className="mt-4 mb-7 whitespace-pre-line text-[15px] leading-[1.85] text-muted-foreground">
           {project.description}
         </p>
         <div className="mt-auto">
