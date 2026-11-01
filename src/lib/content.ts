@@ -578,6 +578,7 @@ export const projects: Project[] = [
     category: "side",
     period: "2023.06 시작, 2026.10 UI 개편",
     role: "UI 설계, 프론트엔드 개발 및 Supabase 연동",
+    website: "https://daily-routine.createdoodle.dev/",
     screenshots: [
       {
         src: "/projects/daily-routine-tasks.webp",
@@ -704,6 +705,7 @@ export const projects: Project[] = [
     category: "side",
     period: "2026.07 - 2026.08",
     role: "게임 전투, 진행 및 비주얼 개발",
+    website: "https://asherror.createdoodle.dev/",
     description:
       "전투와 스테이지 진행, 비주얼을 구현한 Phaser 기반 2D 액션 게임입니다.",
     stack: ["Phaser 4", "React", "TypeScript"],
