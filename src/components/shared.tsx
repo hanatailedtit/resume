@@ -9,7 +9,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { profile, type Project } from "@/lib/content";
-import { cn } from "@/lib/utils";
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
@@ -71,10 +70,7 @@ export function ProjectCard({
 }) {
   return (
     <Card
-      className={cn(
-        "group relative gap-0 overflow-hidden rounded-2xl border bg-background py-0 shadow-none transition-colors hover:border-primary/45 focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-4",
-        compact ? "h-full" : "self-start",
-      )}
+      className="group relative h-full gap-0 overflow-hidden rounded-2xl border bg-background py-0 shadow-none transition-colors hover:border-primary/45 focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-4"
     >
       {!compact && project.screenshots?.[0] && (
         <div className="relative h-44 shrink-0 border-b bg-subtle md:h-48">
