@@ -38,23 +38,22 @@ export function Stack({ items }: { items: string[] }) {
 
 export function ContactLinks() {
   return (
-    <div className="flex flex-wrap items-center gap-x-5 gap-y-4 text-sm text-muted-foreground">
+    <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-muted-foreground">
       <a
         href={`mailto:${profile.email}`}
-        className="inline-flex items-center gap-2 hover:text-primary"
+        className="inline-flex min-h-8 items-center gap-2 hover:text-primary"
       >
-        <EnvelopeSimple size={17} />
+        <EnvelopeSimple size={17} aria-hidden="true" />
         {profile.email}
-        <ArrowUpRight size={15} />
+        <ArrowUpRight size={15} aria-hidden="true" />
       </a>
-      <span className="h-4 border-l" aria-hidden="true" />
       <a
         href={profile.github}
         target="_blank"
         rel="noreferrer"
-        className="inline-flex items-center gap-1.5 hover:text-primary"
+        className="inline-flex min-h-8 items-center gap-1.5 hover:text-primary"
       >
-        GitHub <ArrowUpRight size={15} />
+        GitHub <ArrowUpRight size={15} aria-hidden="true" />
         <span className="sr-only"> (새 탭)</span>
       </a>
     </div>
@@ -68,63 +67,59 @@ export function ProjectCard({
   project: Project;
   compact?: boolean;
 }) {
+  const Heading = compact ? "h3" : "h2";
+  const thumbnail = compact ? undefined : project.screenshots?.[0];
+
   return (
     <Card
       className="group relative h-full gap-0 overflow-hidden rounded-2xl border bg-background py-0 shadow-none transition-colors hover:border-primary/45 focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-4"
     >
-      {!compact && project.screenshots?.[0] && (
+      {thumbnail && (
         <div className="relative h-44 shrink-0 border-b bg-subtle md:h-48">
           <Image
-            src={project.screenshots[0].src}
-            alt={project.screenshots[0].alt}
+            src={thumbnail.src}
+            alt={thumbnail.alt}
             fill
             sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1279px) calc((100vw - 104px) / 2), 588px"
             className="object-cover object-top"
           />
         </div>
       )}
-      <CardContent className="flex flex-1 flex-col p-6 md:p-7">
-        <div className="mb-4">
-          <Badge
-            variant={project.category === "company" ? "default" : "secondary"}
-            className="rounded-full border-0 bg-brand-subtle px-2.5 py-1 text-xs font-semibold text-brand-strong"
-          >
-            {project.category === "company" ? "회사" : "사이드"},{" "}
-            {project.company}
-          </Badge>
-        </div>
-        <h3
+      <CardContent className="flex flex-1 flex-col p-5 md:p-6">
+        <Heading
           className={
             compact
-              ? "text-[22px] font-bold leading-snug tracking-tight"
-              : "text-2xl font-bold leading-snug tracking-tight"
+              ? "text-xl leading-snug font-bold tracking-tight md:text-[22px]"
+              : "text-[22px] leading-snug font-bold tracking-tight md:text-2xl"
           }
         >
           <Link
             href={`/portfolio/${project.slug}`}
-            className="after:absolute after:inset-0 after:rounded-2xl focus-visible:outline-none"
+            className="flex items-start justify-between gap-3 after:absolute after:inset-0 after:rounded-2xl group-hover:text-primary focus-visible:outline-none"
           >
-            {project.title}
+            <span className="min-w-0">{project.title}</span>
+            <ArrowRight
+              size={18}
+              aria-hidden="true"
+              className="mt-1 shrink-0 text-primary"
+            />
           </Link>
-        </h3>
-        {!compact && (
-          <p className="mt-2 text-[13px] text-muted-foreground">
-            {project.period}
-          </p>
-        )}
-        <p className="mt-4 mb-7 whitespace-pre-line text-[15px] leading-[1.85] text-muted-foreground">
+        </Heading>
+        <p className="mt-1.5 text-[13px] text-muted-foreground">
+          {project.company}
+          {!compact && (
+            <span className="tabular-nums"> · {project.period}</span>
+          )}
+        </p>
+        <p className="mt-3 mb-4 whitespace-pre-line text-[15px] leading-[1.75] text-muted-foreground">
           {project.description}
         </p>
-        <div className="mt-auto">
-          <Stack items={compact ? project.stack.slice(0, 3) : project.stack} />
-          <div className="mt-6 flex items-center gap-2 border-t pt-4 text-sm font-semibold text-primary">
-            {compact ? "작업 살펴보기" : "문제 해결 과정 보기"}
-            <ArrowRight
-              size={16}
-              className="motion-safe:transition-transform motion-safe:group-hover:translate-x-1"
-            />
-          </div>
-        </div>
+        <p
+          translate="no"
+          className="mt-auto text-[13px] font-medium text-muted-foreground"
+        >
+          {project.stack.slice(0, 3).join(" · ")}
+        </p>
       </CardContent>
     </Card>
   );

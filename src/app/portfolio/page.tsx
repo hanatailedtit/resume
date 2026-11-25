@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { Button } from "@/components/ui/button";
-import { Eyebrow } from "@/components/shared";
 import { ProjectTabs } from "@/components/project-tabs";
 
 export const metadata: Metadata = {
@@ -14,50 +12,17 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <main id="main-content" className="page-container">
-      <section className="flex flex-col items-start justify-between gap-7 pt-12 pb-10 md:flex-row md:items-end md:pt-16 md:pb-12">
-        <div>
-          <Eyebrow>포트폴리오, Selected work</Eyebrow>
-          <h1 className="page-title">만든 것과 해결한 문제들.</h1>
-          <p className="mt-5 text-base leading-[1.85] text-muted-foreground md:text-lg">
-            서비스와 운영 도구를 개발하며 맡았던 역할과,
-            <br />
-            문제를 해결하고 검증한 과정을
-            기록했습니다.
-          </p>
-        </div>
-        <Button
-          asChild
-          variant="outline"
-          size="lg"
-          className="h-12 w-full rounded-xl px-5 sm:w-auto"
-        >
-          <Link href="/resume">
-            이력 살펴보기
-            <ArrowRight size={17} />
-          </Link>
-        </Button>
-      </section>
+      <h1 className="page-title pt-9 pb-5 md:pt-14 md:pb-6">포트폴리오</h1>
       <ProjectTabs />
-      <section className="my-16 flex flex-col items-start justify-between gap-5 rounded-2xl bg-brand-subtle p-7 md:my-20 md:flex-row md:items-center md:p-9">
-        <div>
-          <h2 className="text-xl font-bold tracking-tight">
-            회사별 담당 업무 보기
-          </h2>
-          <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
-            회사별 역할과 주요 업무를 이력에서 볼 수 있습니다.
-          </p>
-        </div>
-        <Button
-          asChild
-          variant="outline"
-          className="h-12 w-full rounded-xl bg-background px-5 sm:w-auto"
+      <div className="my-12 border-t pt-5 md:my-16">
+        <Link
+          href="/resume"
+          className="inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-primary hover:underline"
         >
-          <Link href="/resume">
-            이력 살펴보기
-            <ArrowRight size={17} />
-          </Link>
-        </Button>
-      </section>
+          회사별 경력 보기
+          <ArrowRight size={16} aria-hidden="true" />
+        </Link>
+      </div>
     </main>
   );
 }

@@ -6,6 +6,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ProjectCard } from "@/components/shared";
 import { projects } from "@/lib/content";
 
+const categories = [
+  { value: "company", label: "회사 프로젝트" },
+  { value: "side", label: "사이드 프로젝트" },
+].map((category) => ({
+  ...category,
+  projects: projects.filter((project) => project.category === category.value),
+}));
+
 function ProjectTabsView({
   activeTab,
   onTabChange,
@@ -18,12 +26,9 @@ function ProjectTabsView({
       <TabsList
         variant="line"
         aria-label="프로젝트 분류"
-        className="h-14 w-full justify-start group-data-horizontal/tabs:h-14 gap-7 rounded-none border-b bg-transparent p-0"
+        className="h-14 w-full justify-start group-data-horizontal/tabs:h-14 gap-5 rounded-none border-b bg-transparent p-0 sm:gap-7"
       >
-        {[
-          ["company", "회사 프로젝트"],
-          ["side", "사이드 프로젝트"],
-        ].map(([value, label]) => (
+        {categories.map(({ value, label, projects }) => (
           <TabsTrigger
             key={value}
             value={value}
@@ -31,28 +36,21 @@ function ProjectTabsView({
           >
             {label}
             <span className="rounded-full bg-secondary px-2 py-0.5 text-xs text-muted-foreground">
-              {projects.filter((project) => project.category === value).length}
+              {projects.length}
             </span>
           </TabsTrigger>
         ))}
       </TabsList>
-      {[
-        ["company", "재직 중 담당한 작업", "회사 프로젝트"],
-        ["side", "직접 기획하거나 팀으로 만든 작업", "사이드 프로젝트"],
-      ].map(([category, subtitle, title]) => (
+      {categories.map(({ value, projects }) => (
         <TabsContent
-          key={category}
-          value={category}
-          className="pt-10 focus-visible:outline-none md:pt-12"
+          key={value}
+          value={value}
+          className="pt-5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary md:pt-7"
         >
-          <p className="mb-2 text-sm text-muted-foreground">{subtitle}</p>
-          <h2 className="section-title">{title}</h2>
-          <div className="mt-7 grid gap-6 md:grid-cols-2">
-            {projects
-              .filter((project) => project.category === category)
-              .map((project) => (
-                <ProjectCard key={project.slug} project={project} />
-              ))}
+          <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+            {projects.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
           </div>
         </TabsContent>
       ))}

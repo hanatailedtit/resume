@@ -1,46 +1,38 @@
 import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   ContactBanner,
   ContactLinks,
-  Eyebrow,
   ProjectCard,
 } from "@/components/shared";
-import {
-  experiences,
-  featuredProjects,
-  projects,
-  profile,
-} from "@/lib/content";
+import { featuredProjects } from "@/lib/content";
+
+const developmentAreas = [
+  ["웹 서비스", "React, Next.js, TypeScript"],
+  ["실시간 운영", "Vue, PixiJS, WebSocket"],
+  ["API와 데이터", "Node.js, PostgreSQL, Redis"],
+];
 
 export default function Home() {
   return (
     <main id="main-content" className="page-container">
       <section
-        className="grid gap-12 border-b py-14 md:gap-14 md:py-[68px] lg:grid-cols-[1fr_408px] lg:gap-16"
+        className="grid gap-6 border-b py-8 sm:py-12 lg:grid-cols-[minmax(0,1fr)_328px] lg:items-start lg:gap-16 lg:py-[60px]"
         aria-labelledby="intro-heading"
       >
         <div>
-          <Eyebrow>
-            {profile.name}, {profile.role}
-          </Eyebrow>
           <h1
             id="intro-heading"
-            className="max-w-[750px] text-[34px] leading-[1.34] font-bold tracking-[-0.035em] md:text-[50px]"
+            className="max-w-[660px] text-[32px] leading-[1.3] font-bold tracking-[-0.035em] md:text-[50px]"
           >
-            웹 서비스와
-            <br />
-            운영 시스템을 개발합니다.
+            웹 서비스와 운영 시스템을 개발합니다.
           </h1>
-          <p className="mt-7 max-w-[630px] text-base leading-[1.8] text-muted-foreground md:mt-8 md:text-lg">
-            React와 Next.js 웹 서비스부터 Vue 실시간 운영 GUI까지,
-            <br />
-            서비스 화면과 API 연동, 실시간 설비 맵을 개발해 왔습니다.
+          <p className="mt-4 max-w-[550px] text-base leading-[1.75] text-muted-foreground md:mt-5 md:text-lg">
+            React·Next.js로 웹 서비스를 만들고, Vue·PixiJS로 실시간 설비 맵을
+            개발해 왔습니다.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row md:mt-8">
             <Button
               asChild
               size="lg"
@@ -48,7 +40,7 @@ export default function Home() {
             >
               <Link href="/resume">
                 이력 살펴보기
-                <ArrowRight size={18} />
+                <ArrowRight size={18} aria-hidden="true" />
               </Link>
             </Button>
             <Button
@@ -59,119 +51,57 @@ export default function Home() {
             >
               <Link href="/portfolio">
                 포트폴리오 보기
-                <ArrowRight size={18} />
+                <ArrowRight size={18} aria-hidden="true" />
               </Link>
             </Button>
           </div>
-          <div className="mt-8">
+          <div className="mt-5">
             <ContactLinks />
           </div>
         </div>
-        <Card className="gap-0 rounded-2xl bg-subtle py-0 shadow-none">
-          <CardContent className="p-7 md:p-8">
-            <div className="mb-7 flex items-center justify-between gap-4">
-              <span className="text-[13px] font-semibold text-muted-foreground">
-                개발 경험의 범위
-              </span>
-              <Badge className="rounded-full border-0 bg-brand-subtle px-3 py-1 text-xs text-brand-strong">
-                3개 영역
-              </Badge>
-            </div>
-            <div className="grid gap-7 md:grid-cols-3 lg:grid-cols-1">
-              {[
-                ["웹 서비스", "React, Next.js, TypeScript"],
-                ["실시간 운영", "Vue, PixiJS, WebSocket"],
-                ["API와 데이터", "Node.js, PostgreSQL, Redis"],
-              ].map(([name, stack], i) => (
-                <div
-                  key={name}
-                  className="border-b pb-6 last:border-0 last:pb-0 md:border-b-0 md:pb-0 lg:border-b lg:pb-6"
+        <aside
+          aria-labelledby="development-heading"
+          className="rounded-xl bg-subtle px-4 py-3.5 sm:px-5 lg:px-6 lg:py-5"
+        >
+          <h2
+            id="development-heading"
+            className="text-xs font-semibold text-muted-foreground"
+          >
+            주로 사용한 기술
+          </h2>
+          <dl className="mt-2.5 grid gap-1.5 sm:grid-cols-3 sm:gap-4 lg:grid-cols-1 lg:gap-3">
+            {developmentAreas.map(([name, stack]) => (
+              <div
+                key={name}
+                className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 sm:block"
+              >
+                <dt className="text-sm font-semibold">{name}</dt>
+                <dd
+                  translate="no"
+                  className="text-[13px] leading-relaxed text-muted-foreground"
                 >
-                  <div className="flex items-center justify-between gap-4">
-                    <h2 className="text-xl font-bold tracking-tight">{name}</h2>
-                    <span className="font-mono text-xs text-muted-foreground">
-                      0{i + 1}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {stack}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      </section>
-      <section className="pt-14 md:pt-16" aria-labelledby="explore-heading">
-        <Eyebrow>경력과 작업</Eyebrow>
-        <h2 id="explore-heading" className="section-title">
-          경력과 프로젝트
-        </h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {[
-            {
-              title: "이력",
-              count: `${experiences.length}개 회사 경력`,
-              subtitle: "어디서, 어떤 역할을 했는지",
-              description: "회사별 경력과 주요 기술, 학력과 자격",
-              href: "/resume",
-              cta: "이력 전체 보기",
-            },
-            {
-              title: "포트폴리오",
-              count: `${projects.length}개 프로젝트`,
-              subtitle: "어떤 문제를, 어떻게 풀었는지",
-              description: `회사 프로젝트 ${projects.filter((project) => project.category === "company").length}개, 사이드 프로젝트 ${projects.filter((project) => project.category === "side").length}개`,
-              href: "/portfolio",
-              cta: "포트폴리오 전체 보기",
-            },
-          ].map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group rounded-2xl border p-6 transition-colors hover:border-primary/45 md:p-8"
-            >
-              <div className="flex items-center justify-between gap-3">
-                <h3 className="text-2xl font-bold tracking-tight">
-                  {item.title}
-                </h3>
-                <Badge
-                  variant="secondary"
-                  className="rounded-full px-3 py-1 text-xs"
-                >
-                  {item.count}
-                </Badge>
+                  {stack}
+                </dd>
               </div>
-              <p className="mt-5 text-[17px] font-semibold">{item.subtitle}</p>
-              <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
-                {item.description}
-              </p>
-              <div className="mt-6 flex items-center justify-end gap-2 border-t pt-4 text-sm font-semibold text-primary">
-                {item.cta}
-                <ArrowRight
-                  size={16}
-                  className="motion-safe:transition-transform motion-safe:group-hover:translate-x-1"
-                />
-              </div>
-            </Link>
-          ))}
-        </div>
+            ))}
+          </dl>
+        </aside>
       </section>
-      <section className="pt-16 md:pt-20" aria-labelledby="featured-heading">
-        <Eyebrow>대표 작업</Eyebrow>
-        <div className="flex flex-wrap items-center justify-between gap-4">
+      <section className="pt-7 md:pt-12" aria-labelledby="featured-heading">
+        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
           <h2 id="featured-heading" className="section-title">
-            제 경험을 보여주는 프로젝트
+            대표 프로젝트
           </h2>
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary"
+            aria-label="프로젝트 전체 보기"
+            className="inline-flex min-h-10 items-center gap-2 text-sm font-semibold text-primary hover:underline"
           >
-            프로젝트 전체 보기
-            <ArrowRight size={16} />
+            전체 보기
+            <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </div>
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
+        <div className="mt-4 grid gap-4 md:mt-6 md:grid-cols-3 md:gap-6">
           {featuredProjects.map((project) => (
             <ProjectCard key={project.slug} project={project} compact />
           ))}

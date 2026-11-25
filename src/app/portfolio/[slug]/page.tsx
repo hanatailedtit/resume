@@ -10,9 +10,78 @@ import {
 import { Button } from "@/components/ui/button";
 import { Eyebrow, Stack } from "@/components/shared";
 import { ProjectArchitecture } from "@/components/project-architectures";
-import { experiences, projects } from "@/lib/content";
+import { experiences, projects, type Project } from "@/lib/content";
+import { cn } from "@/lib/utils";
 
 type Props = { params: Promise<{ slug: string }> };
+type Screenshot = NonNullable<Project["screenshots"]>[number];
+
+function ProjectScreenshot({
+  screenshot,
+  layout = "grid",
+}: {
+  screenshot: Screenshot;
+  layout?: "lead" | "grid" | "comparison";
+}) {
+  const lead = layout === "lead";
+  const comparison = layout === "comparison";
+  const sizes = comparison
+    ? "(max-width: 839px) 760px, (max-width: 1039px) calc(100vw - 80px), 960px"
+    : lead
+      ? "(max-width: 767px) calc(100vw - 48px), (max-width: 1039px) calc(100vw - 80px), 960px"
+      : "(max-width: 767px) calc(100vw - 48px), (max-width: 1039px) calc((100vw - 104px) / 2), 468px";
+
+  return (
+    <figure className={cn("min-w-0", comparison && "md:col-span-2")}>
+      <div
+        className={
+          comparison
+            ? "overflow-x-auto rounded-xl pb-2 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary"
+            : undefined
+        }
+        tabIndex={comparison ? 0 : undefined}
+        role={comparison ? "region" : undefined}
+        aria-label={
+          comparison ? `${screenshot.caption} 가로 스크롤` : undefined
+        }
+      >
+        <a
+          href={screenshot.src}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${screenshot.caption} 원본 보기 (새 탭)`}
+          className={cn(
+            "relative block overflow-hidden rounded-xl border bg-subtle hover:border-primary/45 focus-visible:-outline-offset-2",
+            comparison && "min-w-[760px]",
+            !screenshot.group && "aspect-[16/10]",
+          )}
+        >
+          <Image
+            src={screenshot.src}
+            alt={screenshot.alt}
+            width={screenshot.width}
+            height={screenshot.height}
+            loading={lead ? "eager" : "lazy"}
+            sizes={sizes}
+            className={cn(
+              "object-contain p-3 md:p-5",
+              screenshot.group ? "h-auto w-full" : "size-full",
+            )}
+          />
+          {lead && (
+            <span className="absolute top-2 right-2 inline-flex items-center gap-1 rounded-md border bg-background px-2.5 py-1.5 text-xs font-semibold text-primary md:top-3 md:right-3">
+              원본 보기
+              <ArrowUpRight size={14} aria-hidden="true" />
+            </span>
+          )}
+        </a>
+      </div>
+      <figcaption className="mt-2 text-sm leading-relaxed text-muted-foreground">
+        {screenshot.caption}
+      </figcaption>
+    </figure>
+  );
+}
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -37,16 +106,14 @@ export default async function ProjectPage({ params }: Props) {
   const nextProject =
     projects[(projects.indexOf(project) + 1) % projects.length];
   const portfolioBackHref = `/portfolio?category=${project.category}`;
-  const screenshotGroups = [
-    ...new Set(
-      project.screenshots?.map((image) => image.group ?? "프로젝트 화면"),
-    ),
-  ].map((title) => ({
-    title,
-    images: project.screenshots!.filter(
-      (image) => (image.group ?? "프로젝트 화면") === title,
-    ),
-  }));
+  const [leadScreenshot, ...gallery] = project.screenshots ?? [];
+  const screenshotGroups = [...new Set(gallery.map((image) => image.group))].map(
+    (group) => ({
+      group,
+      images: gallery.filter((image) => image.group === group),
+      comparison: group === "라이트 및 다크 모드 비교" || group === "모바일 반응형",
+    }),
+  );
   return (
     <main id="main-content" className="page-container pb-14 md:pb-20">
       <div className="pt-8 md:pt-10">
@@ -54,7 +121,7 @@ export default async function ProjectPage({ params }: Props) {
           href={portfolioBackHref}
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
         >
-          <ArrowLeft size={16} />
+          <ArrowLeft size={16} aria-hidden="true" />
           포트폴리오 목록
         </Link>
       </div>
@@ -75,7 +142,7 @@ export default async function ProjectPage({ params }: Props) {
           >
             <a href={project.website} target="_blank" rel="noreferrer">
               서비스 방문
-              <ArrowUpRight size={16} />
+              <ArrowUpRight size={16} aria-hidden="true" />
               <span className="sr-only"> (새 탭)</span>
             </a>
           </Button>
@@ -106,97 +173,21 @@ export default async function ProjectPage({ params }: Props) {
         </dl>
       </section>
       <div className="mx-auto max-w-[960px]">
-        {screenshotGroups.map((group, groupIndex) => (
-          <section
-            key={group.title}
-            className="pt-10 md:pt-14"
-            aria-labelledby={`screenshots-heading-${groupIndex}`}
-          >
-            <h2
-              id={`screenshots-heading-${groupIndex}`}
-              className="section-title"
-            >
-              {group.title}
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              이미지를 선택하면 크게 볼 수 있습니다.
-            </p>
-            <div className="mt-7 grid gap-6 md:grid-cols-2">
-              {group.images.map((screenshot, index) => {
-                const comparison =
-                  group.title === "라이트 및 다크 모드 비교" ||
-                  group.title === "모바일 반응형";
-                const wide = index === 0 || comparison;
-                return (
-                  <figure
-                    key={screenshot.src}
-                    className={wide ? "min-w-0 md:col-span-2" : "min-w-0"}
-                  >
-                    <div
-                      className={
-                        comparison
-                          ? "overflow-x-auto rounded-xl pb-2 focus-visible:outline-2 focus-visible:outline-primary"
-                          : undefined
-                      }
-                      tabIndex={comparison ? 0 : undefined}
-                      role={comparison ? "region" : undefined}
-                      aria-label={
-                        comparison
-                          ? `${screenshot.caption} 가로 스크롤`
-                          : undefined
-                      }
-                    >
-                      <a
-                        href={screenshot.src}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`${screenshot.caption} 크게 보기 (새 탭)`}
-                        className={`relative block overflow-hidden rounded-xl border bg-subtle ${comparison ? "min-w-[760px]" : ""} ${screenshot.group ? "" : "aspect-[16/10]"}`}
-                      >
-                        <Image
-                          src={screenshot.src}
-                          alt={screenshot.alt}
-                          width={screenshot.width}
-                          height={screenshot.height}
-                          loading={
-                            groupIndex === 0 && index === 0 ? "eager" : "lazy"
-                          }
-                          sizes={
-                            comparison
-                              ? "(max-width: 839px) 760px, 960px"
-                              : wide
-                                ? "(max-width: 767px) calc(100vw - 48px), (max-width: 1039px) calc(100vw - 80px), 960px"
-                                : "(max-width: 767px) calc(100vw - 48px), (max-width: 1039px) calc((100vw - 104px) / 2), 468px"
-                          }
-                          className={`${screenshot.group ? "h-auto w-full" : "size-full"} object-contain p-3 md:p-5`}
-                        />
-                      </a>
-                    </div>
-                    <figcaption className="mt-3 flex items-center justify-between gap-3 text-sm leading-relaxed text-muted-foreground">
-                      {screenshot.caption}
-                      <ArrowUpRight
-                        size={15}
-                        className="shrink-0"
-                        aria-hidden="true"
-                      />
-                    </figcaption>
-                  </figure>
-                );
-              })}
-            </div>
-          </section>
-        ))}
         <section className="pt-10 md:pt-14" aria-labelledby="overview-heading">
           <h2 id="overview-heading" className="section-title">
             프로젝트 개요
           </h2>
           <p className="prose-copy mt-5">{project.overview}</p>
+          {leadScreenshot && (
+            <div className="mt-6">
+              <ProjectScreenshot screenshot={leadScreenshot} layout="lead" />
+            </div>
+          )}
         </section>
         <section
           className="mt-12 border-t pt-10 md:mt-14 md:pt-12"
           aria-labelledby="case-heading"
         >
-          <Eyebrow>{project.problem ? "대표 문제 해결" : "구현과 검증"}</Eyebrow>
           <h2
             id="case-heading"
             className="text-[25px] leading-snug font-bold tracking-tight md:text-[30px]"
@@ -229,6 +220,42 @@ export default async function ProjectPage({ params }: Props) {
             </p>
           </div>
         </section>
+        {screenshotGroups.length > 0 && (
+          <section
+            className="mt-12 border-t pt-10 md:mt-14 md:pt-12"
+            aria-labelledby="screenshots-heading"
+          >
+            <h2 id="screenshots-heading" className="section-title">
+              프로젝트 화면 더 보기
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              이미지를 선택하면 원본 크기로 열립니다.
+            </p>
+            {screenshotGroups.map(({ group, images, comparison }) => (
+              <div key={group ?? "screenshots"} className="mt-7 md:mt-9">
+                {group && (
+                  <h3 className="mb-3 text-lg font-semibold tracking-tight">
+                    {group}
+                  </h3>
+                )}
+                {comparison && (
+                  <p className="mb-3 text-sm text-muted-foreground min-[840px]:hidden">
+                    좌우로 밀어 나머지 화면을 볼 수 있어요.
+                  </p>
+                )}
+                <div className="grid gap-6 md:grid-cols-2">
+                  {images.map((screenshot) => (
+                    <ProjectScreenshot
+                      key={screenshot.src}
+                      screenshot={screenshot}
+                      layout={comparison ? "comparison" : "grid"}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </section>
+        )}
         <section
           className="mt-12 border-t pt-10 md:mt-14 md:pt-12"
           aria-labelledby="other-work-heading"
@@ -268,7 +295,7 @@ export default async function ProjectPage({ params }: Props) {
               className="inline-flex items-center gap-2 text-sm font-semibold text-primary"
             >
               관련 이력으로 이동
-              <ArrowRight size={16} />
+              <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </section>
         )}
@@ -278,7 +305,7 @@ export default async function ProjectPage({ params }: Props) {
         >
           <Button asChild variant="outline" className="h-11 rounded-xl">
             <Link href={portfolioBackHref}>
-              <ArrowLeft size={16} />
+              <ArrowLeft size={16} aria-hidden="true" />
               포트폴리오 목록으로
             </Link>
           </Button>
@@ -287,7 +314,7 @@ export default async function ProjectPage({ params }: Props) {
             className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-primary"
           >
             {nextProject.title}
-            <ArrowRight size={16} />
+            <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </nav>
       </div>
