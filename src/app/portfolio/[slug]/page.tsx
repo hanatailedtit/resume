@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   ArrowLeft,
@@ -10,78 +9,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { Eyebrow, Stack } from "@/components/shared";
 import { ProjectArchitecture } from "@/components/project-architectures";
-import { experiences, projects, type Project } from "@/lib/content";
-import { cn } from "@/lib/utils";
+import { ProjectScreenshot } from "@/components/project-screenshot";
+import { experiences, projects } from "@/lib/content";
 
 type Props = { params: Promise<{ slug: string }> };
-type Screenshot = NonNullable<Project["screenshots"]>[number];
-
-function ProjectScreenshot({
-  screenshot,
-  layout = "grid",
-}: {
-  screenshot: Screenshot;
-  layout?: "lead" | "grid" | "comparison";
-}) {
-  const lead = layout === "lead";
-  const comparison = layout === "comparison";
-  const sizes = comparison
-    ? "(max-width: 839px) 760px, (max-width: 1039px) calc(100vw - 80px), 960px"
-    : lead
-      ? "(max-width: 767px) calc(100vw - 48px), (max-width: 1039px) calc(100vw - 80px), 960px"
-      : "(max-width: 767px) calc(100vw - 48px), (max-width: 1039px) calc((100vw - 104px) / 2), 468px";
-
-  return (
-    <figure className={cn("min-w-0", comparison && "md:col-span-2")}>
-      <div
-        className={
-          comparison
-            ? "overflow-x-auto rounded-xl pb-2 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary"
-            : undefined
-        }
-        tabIndex={comparison ? 0 : undefined}
-        role={comparison ? "region" : undefined}
-        aria-label={
-          comparison ? `${screenshot.caption} 가로 스크롤` : undefined
-        }
-      >
-        <a
-          href={screenshot.src}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`${screenshot.caption} 원본 보기 (새 탭)`}
-          className={cn(
-            "relative block overflow-hidden rounded-xl border bg-subtle hover:border-primary/45 focus-visible:-outline-offset-2",
-            comparison && "min-w-[760px]",
-            !screenshot.group && "aspect-[16/10]",
-          )}
-        >
-          <Image
-            src={screenshot.src}
-            alt={screenshot.alt}
-            width={screenshot.width}
-            height={screenshot.height}
-            loading={lead ? "eager" : "lazy"}
-            sizes={sizes}
-            className={cn(
-              "object-contain p-3 md:p-5",
-              screenshot.group ? "h-auto w-full" : "size-full",
-            )}
-          />
-          {lead && (
-            <span className="absolute top-2 right-2 inline-flex items-center gap-1 rounded-md border bg-background px-2.5 py-1.5 text-xs font-semibold text-primary md:top-3 md:right-3">
-              원본 보기
-              <ArrowUpRight size={14} aria-hidden="true" />
-            </span>
-          )}
-        </a>
-      </div>
-      <figcaption className="mt-2 text-sm leading-relaxed text-muted-foreground">
-        {screenshot.caption}
-      </figcaption>
-    </figure>
-  );
-}
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -229,7 +160,7 @@ export default async function ProjectPage({ params }: Props) {
               프로젝트 화면 더 보기
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              이미지를 선택하면 원본 크기로 열립니다.
+              이미지를 선택하면 전체 화면으로 볼 수 있어요.
             </p>
             {screenshotGroups.map(({ group, images, comparison }) => (
               <div key={group ?? "screenshots"} className="mt-7 md:mt-9">
